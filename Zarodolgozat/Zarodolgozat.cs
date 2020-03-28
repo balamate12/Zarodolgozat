@@ -196,19 +196,19 @@ namespace Zarodolgozat
                 uj_sor.Cells["fizetesimod"].Value = sqldatareader.GetString("fizetesimod");
                 uj_sor.Cells["megjegyzes"].Value = sqldatareader.GetString("megjegyzes");
             }
-
-
             Program.conn.Close();
-
-            dataGridView1.Refresh();
-            dataGridView1.Update();
-
         }
 
         private void Button1_manualis_Click(object sender, EventArgs e)
         {
             var Manualis = new Manualis();
             Manualis.Show();
+        }
+
+        private void Button1_imap_Click(object sender, EventArgs e)
+        {
+            var imap = new imap();
+            imap.Show();
         }
     }
 }
