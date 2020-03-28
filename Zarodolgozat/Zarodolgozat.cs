@@ -190,7 +190,7 @@ namespace Zarodolgozat
                 uj_sor.Cells["telepitesicim"].Value = sqldatareader.GetString("telepitesicim");
                 uj_sor.Cells["postazasicim"].Value = sqldatareader.GetString("postazasicim");
                 uj_sor.Cells["telepitesicim"].Value = sqldatareader.GetString("telepitesicim");
-                uj_sor.Cells["telefon"].Value = sqldatareader.GetInt32("telefonszam");
+                uj_sor.Cells["telefon"].Value = sqldatareader.GetString("telefonszam");
                 uj_sor.Cells["email"].Value = sqldatareader.GetString("email");
                 uj_sor.Cells["internetcsomag"].Value = sqldatareader.GetInt32("internetcsomag");
                 uj_sor.Cells["fizetesimod"].Value = sqldatareader.GetString("fizetesimod");
@@ -199,6 +199,9 @@ namespace Zarodolgozat
 
 
             Program.conn.Close();
+
+            dataGridView1.Refresh();
+            dataGridView1.Update();
 
         }
 

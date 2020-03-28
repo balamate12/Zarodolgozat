@@ -49,12 +49,12 @@
             this.textBox1_szemelyigazolvanyszama = new System.Windows.Forms.TextBox();
             this.textBox2_telepitesicim = new System.Windows.Forms.TextBox();
             this.textBox3_postazasicim = new System.Windows.Forms.TextBox();
-            this.textBox4_telefonszam = new System.Windows.Forms.TextBox();
             this.textBox5_email = new System.Windows.Forms.TextBox();
             this.listBox1_internetcsomag = new System.Windows.Forms.ListBox();
             this.listBox2_fizetesimod = new System.Windows.Forms.ListBox();
             this.textBox6_megjegyzes = new System.Windows.Forms.TextBox();
             this.button1_kuld = new System.Windows.Forms.Button();
+            this.maskedTextBox2_telefonszam = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1_elofizetoneve
@@ -231,19 +231,13 @@
             this.textBox3_postazasicim.Size = new System.Drawing.Size(382, 22);
             this.textBox3_postazasicim.TabIndex = 20;
             // 
-            // textBox4_telefonszam
-            // 
-            this.textBox4_telefonszam.Location = new System.Drawing.Point(507, 198);
-            this.textBox4_telefonszam.Name = "textBox4_telefonszam";
-            this.textBox4_telefonszam.Size = new System.Drawing.Size(382, 22);
-            this.textBox4_telefonszam.TabIndex = 21;
-            // 
             // textBox5_email
             // 
             this.textBox5_email.Location = new System.Drawing.Point(507, 282);
             this.textBox5_email.Name = "textBox5_email";
             this.textBox5_email.Size = new System.Drawing.Size(382, 22);
             this.textBox5_email.TabIndex = 22;
+            this.textBox5_email.TextChanged += new System.EventHandler(this.TextBox5_email_TextChanged);
             // 
             // listBox1_internetcsomag
             // 
@@ -283,17 +277,25 @@
             this.button1_kuld.UseVisualStyleBackColor = true;
             this.button1_kuld.Click += new System.EventHandler(this.Button1_kuld_Click);
             // 
+            // maskedTextBox2_telefonszam
+            // 
+            this.maskedTextBox2_telefonszam.Location = new System.Drawing.Point(507, 198);
+            this.maskedTextBox2_telefonszam.Mask = "00000000000";
+            this.maskedTextBox2_telefonszam.Name = "maskedTextBox2_telefonszam";
+            this.maskedTextBox2_telefonszam.Size = new System.Drawing.Size(382, 22);
+            this.maskedTextBox2_telefonszam.TabIndex = 28;
+            // 
             // Manualis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 795);
+            this.Controls.Add(this.maskedTextBox2_telefonszam);
             this.Controls.Add(this.button1_kuld);
             this.Controls.Add(this.textBox6_megjegyzes);
             this.Controls.Add(this.listBox2_fizetesimod);
             this.Controls.Add(this.listBox1_internetcsomag);
             this.Controls.Add(this.textBox5_email);
-            this.Controls.Add(this.textBox4_telefonszam);
             this.Controls.Add(this.textBox3_postazasicim);
             this.Controls.Add(this.textBox2_telepitesicim);
             this.Controls.Add(this.textBox1_szemelyigazolvanyszama);
@@ -346,11 +348,11 @@
         private System.Windows.Forms.TextBox textBox1_szemelyigazolvanyszama;
         private System.Windows.Forms.TextBox textBox2_telepitesicim;
         private System.Windows.Forms.TextBox textBox3_postazasicim;
-        private System.Windows.Forms.TextBox textBox4_telefonszam;
         private System.Windows.Forms.TextBox textBox5_email;
         private System.Windows.Forms.ListBox listBox1_internetcsomag;
         private System.Windows.Forms.ListBox listBox2_fizetesimod;
         private System.Windows.Forms.TextBox textBox6_megjegyzes;
         private System.Windows.Forms.Button button1_kuld;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2_telefonszam;
     }
 }

@@ -23,9 +23,25 @@ namespace Zarodolgozat
 
         }
 
+        private void Manualis_Load(object sender, EventArgs e)
+        {
+            listBox1_internetcsomag.Items.Add("8");
+            listBox1_internetcsomag.Items.Add("15");
+            listBox1_internetcsomag.Items.Add("30");
+            listBox1_internetcsomag.Items.Add("60");
+            listBox1_internetcsomag.SelectedItem = "8";
+
+
+
+            listBox2_fizetesimod.Items.Add("Posta");
+            listBox2_fizetesimod.Items.Add("Banki átutalás");
+            listBox2_fizetesimod.Items.Add("Elektronikus számla");
+            listBox2_fizetesimod.SelectedItem = "Posta";
+
+        }
+
         private void Button1_kuld_Click(object sender, EventArgs e)
         {
-            string id = "NULL";
             string elofizetoneve = textBox1_elofizetoneve.Text;
             string szuletesineve = textBox1_szuletesineve.Text;
             string szuletesihely = textBox1_szuletesihelye.Text;
@@ -34,16 +50,16 @@ namespace Zarodolgozat
             string szemelyiszama = Convert.ToString(textBox1_szemelyigazolvanyszama.Text);
             string telepitesicim = Convert.ToString(textBox2_telepitesicim.Text);
             string postazasicim = Convert.ToString(textBox3_postazasicim.Text);
-            string telefonszam = Convert.ToString(textBox4_telefonszam.Text);
+            string telefonszam = Convert.ToString(maskedTextBox2_telefonszam.Text);
             string email = Convert.ToString(textBox5_email.Text);
-            string intertnetcsomag = Convert.ToString(listBox1_internetcsomag.Text);
-            string fizetesimod = Convert.ToString(listBox2_fizetesimod.Text);
+            string intertnetcsomag = Convert.ToString(listBox1_internetcsomag.SelectedItem.ToString());
+            string fizetesimod = Convert.ToString(listBox2_fizetesimod.SelectedItem.ToString());
             string megjegyzes = Convert.ToString(textBox6_megjegyzes.Text);
 
-            //INSERT INTO `users` (`id`, `elofizetoneve`, `szuletesineve`, `szuletesihely`, `szuletesiido`, `anyjaszuletesineve`, `szemelyiszam`, `telepitesicim`, `postazasicim`, `telefonszam`, `email`, `internetcsomag`, `fizetesimod`, `megjegyzes`) VALUES(NULL, 'Nem Igen', 'Igen Nem', 'Nyíregyháza', '1992.02.12', 'Talán Néhanita', '123456GB', '4002 Debrecen Vadaskert utca 12.', '4002 Debrecen Vadaskert utca 12.', '301234556', 'Igen@nem.talan', '30', 'Posta', 'Nincs.');
             Program.conn.Open();
             Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
             Program.sqlparancs.Connection = Program.conn;
+
 
             Program.sqlparancs.CommandText = "INSERT INTO `users` (`id`, `elofizetoneve`, `szuletesineve`, `szuletesihely`, `szuletesiido`, `anyjaszuletesineve`, `szemelyiszam`, `telepitesicim`, `postazasicim`, `telefonszam`, `email`, `internetcsomag`, `fizetesimod`, `megjegyzes`) VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             Program.sqlparancs.Parameters.Add("elofizetoneve", MySqlDbType.VarChar).Value = elofizetoneve;
@@ -56,12 +72,21 @@ namespace Zarodolgozat
             Program.sqlparancs.Parameters.Add("postazasicim", MySqlDbType.VarChar).Value = postazasicim;
             Program.sqlparancs.Parameters.Add("telefonszam", MySqlDbType.VarChar).Value = telefonszam;
             Program.sqlparancs.Parameters.Add("email", MySqlDbType.VarChar).Value = email;
-            Program.sqlparancs.Parameters.Add("internetcsomag", MySqlDbType.VarChar).Value = intertnetcsomag;
-            Program.sqlparancs.Parameters.Add("fizetesimod", MySqlDbType.VarChar).Value = fizetesimod;
+            Program.sqlparancs.Parameters.Add("internetcsomag", MySqlDbType.String).Value = intertnetcsomag;
+            Program.sqlparancs.Parameters.Add("fizetesimod", MySqlDbType.String).Value = fizetesimod;
             Program.sqlparancs.Parameters.Add("megjegyzes", MySqlDbType.VarChar).Value = megjegyzes;
             Program.sqlparancs.ExecuteNonQuery();
             Program.conn.Close();
-            this.Close();
+
+
+            if (!this.textBox5_email.Text.Contains('@') || !this.textBox5_email.Text.Contains('.'))
+            {
+                MessageBox.Show("Kérem adjon meg egy helyes email címet!", "Hibaüzent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                this.Close();
+
+
         }
 
         private void ListBox1_internetcsomag_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,18 +99,9 @@ namespace Zarodolgozat
 
         }
 
-        private void Manualis_Load(object sender, EventArgs e)
+        private void TextBox5_email_TextChanged(object sender, EventArgs e)
         {
-            listBox1_internetcsomag.Items.Add("8");
-            listBox1_internetcsomag.Items.Add("15");
-            listBox1_internetcsomag.Items.Add("30");
-            listBox1_internetcsomag.Items.Add("60");
 
-
-
-            listBox2_fizetesimod.Items.Add("Posta");
-            listBox2_fizetesimod.Items.Add("Banki átutalás");
-            listBox2_fizetesimod.Items.Add("Elektronikus számla");
         }
     }
 }

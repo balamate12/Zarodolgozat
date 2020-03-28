@@ -33,8 +33,7 @@ namespace Zarodolgozat
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                Environment.Exit(0);
-               
+                Environment.Exit(0);  
             }
 
             
