@@ -151,7 +151,7 @@
             this.Controls.Add(this.label1_imap);
             this.Controls.Add(this.textBox1);
             this.Name = "imap";
-            this.Text = "imap";
+            this.Text = "Imap";
             this.Load += new System.EventHandler(this.Imap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

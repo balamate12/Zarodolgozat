@@ -18,11 +18,6 @@ namespace Zarodolgozat
             InitializeComponent();
         }
 
-        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Manualis_Load(object sender, EventArgs e)
         {
             listBox1_internetcsomag.Items.Add("8");
@@ -86,21 +81,6 @@ namespace Zarodolgozat
             else
                 this.Close();
 
-
-        }
-
-        private void ListBox1_internetcsomag_SelectedIndexChanged(object sender, EventArgs e)
-        {
-  
-        }
-
-        private void ListBox2_fizetesimod_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox5_email_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }

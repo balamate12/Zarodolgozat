@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Limilabs.Client.IMAP;
 using Limilabs.Mail;
+using MySql.Data.MySqlClient;
 
 
 namespace Zarodolgozat
@@ -50,9 +51,11 @@ namespace Zarodolgozat
             string port = Convert.ToString(textBox4_port.Text);
             string password = textBox5_password.Text;
 
-            using (Imap imap = new Imap())
+            List<string> uzenet = new List<string>();
+
+            try
             {
-                try
+                using (Imap imap = new Imap())
                 {
                     imap.Connect(imapbe, Convert.ToInt32(port), true);
                     imap.UseBestLogin(user, password);
@@ -72,26 +75,94 @@ namespace Zarodolgozat
                             IMail email = new MailBuilder()
                                 .CreateFromEml(imap.GetMessageByUID(uid));
 
-                            textBox1.Text = email.Subject;
-                            textBox1.Text = email.Text;
-                            if (email.Text.Length > 0)
-                            {
-                                MessageBox.Show("Sikeres beolvasás!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                                MessageBox.Show("Nincs beérkezett megrendelés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //textBox1.Text = email.Subject;
+                            //textBox1.Text = email.Text;
+
+                            uzenet.Add(email.Text);
+
+                            imap.Close();
                         }
                         i++;
                     }
 
-                    imap.Close();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Helytelen bejelentkezés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
-  
+            catch (Exception)
+            {
+                MessageBox.Show("Helytelen bejelentkezés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            foreach (var item in uzenet)
+            {
+                string[] lines = item.Split(
+                new[] { Environment.NewLine },
+                StringSplitOptions.None
+                );
+
+                string[] sor = lines[12].Split(':');
+                string elofizetoneve = sor[1];
+
+                string[] sor1 = lines[13].Split(':');
+                string szuletesineve = sor1[1];
+
+                string[] sor2 = lines[14].Split(':',',');
+                string szuletesihely = sor2[2]; // születési hely
+                string szuletesiido = sor2[3]; //születési idő 
+
+                string[] sor3 = lines[15].Split(':');
+                string anyjaszuletesineve = sor3[1];
+
+                string[] sor4 = lines[16].Split(':');
+                string szemelyiszama = sor4[1];
+
+                string[] sor5 = lines[17].Split(':');
+                string telepitesicim = sor5[1];
+
+                string[] sor6 = lines[18].Split(':');
+                string postazasicim = sor6[1];
+
+                string[] sor7 = lines[19].Split(':');
+                string telefonszam = sor7[1];
+
+                string[] sor8 = lines[20].Split(':');
+                string email = sor8[1];
+
+                string[] sor9 = lines[21].Split(':');
+                string intertnetcsomag = sor9[1];
+
+                string[] sor10 = lines[22].Split(':');
+                string fizetesimod = sor10[1];
+
+                string[] sor11 = lines[23].Split(':');
+                string megjegyzes = sor11[1];
+
+                Program.conn.Open();
+                Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
+                Program.sqlparancs.Connection = Program.conn;
+
+
+                Program.sqlparancs.CommandText = "INSERT INTO `users` (`id`, `elofizetoneve`, `szuletesineve`, `szuletesihely`, `szuletesiido`, `anyjaszuletesineve`, `szemelyiszam`, `telepitesicim`, `postazasicim`, `telefonszam`, `email`, `internetcsomag`, `fizetesimod`, `megjegyzes`) VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                Program.sqlparancs.Parameters.Add("elofizetoneve", MySqlDbType.VarChar).Value = elofizetoneve;
+                Program.sqlparancs.Parameters.Add("szuletesineve", MySqlDbType.VarChar).Value = szuletesineve;
+                Program.sqlparancs.Parameters.Add("szuletesihely", MySqlDbType.VarChar).Value = szuletesihely;
+                Program.sqlparancs.Parameters.Add("szuletesiido", MySqlDbType.VarChar).Value = szuletesiido;
+                Program.sqlparancs.Parameters.Add("anyjaszuletesineve", MySqlDbType.VarChar).Value = anyjaszuletesineve;
+                Program.sqlparancs.Parameters.Add("szemelyiszam", MySqlDbType.VarChar).Value = szemelyiszama;
+                Program.sqlparancs.Parameters.Add("telepitesicim", MySqlDbType.VarChar).Value = telepitesicim;
+                Program.sqlparancs.Parameters.Add("postazasicim", MySqlDbType.VarChar).Value = postazasicim;
+                Program.sqlparancs.Parameters.Add("telefonszam", MySqlDbType.VarChar).Value = telefonszam;
+                Program.sqlparancs.Parameters.Add("email", MySqlDbType.VarChar).Value = email;
+                Program.sqlparancs.Parameters.Add("internetcsomag", MySqlDbType.String).Value = intertnetcsomag;
+                Program.sqlparancs.Parameters.Add("fizetesimod", MySqlDbType.String).Value = fizetesimod;
+                Program.sqlparancs.Parameters.Add("megjegyzes", MySqlDbType.VarChar).Value = megjegyzes;
+                Program.sqlparancs.ExecuteNonQuery();
+                Program.conn.Close();
+
+            }
+
+           
+
         }
 
         private void Button1_bezar_Click(object sender, EventArgs e)
