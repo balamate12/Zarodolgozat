@@ -26,36 +26,81 @@ namespace Zarodolgozat
 
         private void Imap_Load(object sender, EventArgs e)
         {
-            textBox1.ScrollBars = ScrollBars.Vertical;
+        textBox1.ScrollBars = ScrollBars.Vertical;
+        }
+
+        private void Button1_bejelentkezes_Click(object sender, EventArgs e)
+        {
+            //imap.gmail.com || 993
+            if (String.IsNullOrEmpty(textBox2_imap.Text))
+            {
+                MessageBox.Show("Adjon meg imap elérhetőséget!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (String.IsNullOrEmpty(textBox3_user.Text))
+            {
+                MessageBox.Show("Adjon meg felhasználónevet!","Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (String.IsNullOrEmpty(textBox4_port.Text))
+            {
+                MessageBox.Show("Adjon meg portszámot!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (String.IsNullOrEmpty(textBox5_password.Text))
+            {
+                MessageBox.Show("Adjon meg jelszót!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            string imapbe = textBox2_imap.Text;
+            string user = textBox3_user.Text;
+            string port = Convert.ToString(textBox4_port.Text);
+            string password = textBox5_password.Text;
 
             using (Imap imap = new Imap())
             {
-                imap.Connect("imap.gmail.com", 993, true);       
-                imap.UseBestLogin("probapopclient", "PoPClient");
-                
-                imap.SelectInbox();            
-
-                SimpleImapQuery query = new SimpleImapQuery();
-                query.Subject = "Megrendelés";
-                query.Unseen = true;
-                List<long> uidList = imap.Search(query);
-
-                int i = 0;
-                foreach (long uid in uidList)
+                try
                 {
-                    if (i == 0)
+                    imap.Connect(imapbe, Convert.ToInt32(port), true);
+                    imap.UseBestLogin(user, password);
+
+                    imap.SelectInbox();
+
+                    SimpleImapQuery query = new SimpleImapQuery();
+                    query.Subject = "Megrendelés";
+                    query.Unseen = true;
+                    List<long> uidList = imap.Search(query);
+
+                    int i = 0;
+                    foreach (long uid in uidList)
                     {
-                        IMail email = new MailBuilder()
-                            .CreateFromEml(imap.GetMessageByUID(uid));
+                        if (i == 0)
+                        {
+                            IMail email = new MailBuilder()
+                                .CreateFromEml(imap.GetMessageByUID(uid));
 
-                        textBox1.Text = email.Subject;
-                        textBox1.Text = email.Text;
+                            textBox1.Text = email.Subject;
+                            textBox1.Text = email.Text;
+                            if (email.Text.Length > 0)
+                            {
+                                MessageBox.Show("Sikeres beolvasás!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                                MessageBox.Show("Nincs beérkezett megrendelés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        i++;
                     }
-                    i++;
+                    imap.Close();
                 }
-                imap.Close();
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Helytelen bejelentkezés!","Információ",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
+
+            }
+        }
+
+        private void Button1_bezar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
