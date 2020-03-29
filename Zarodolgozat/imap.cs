@@ -8,12 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Limilabs.Client.IMAP;
-using Limilabs.Client.POP3;
-using Limilabs.Client.SMTP;
 using Limilabs.Mail;
-using Limilabs.Mail.MIME;
-using Limilabs.Mail.Fluent;
-using Limilabs.Mail.Headers;
+
 
 namespace Zarodolgozat
 {
@@ -38,7 +34,7 @@ namespace Zarodolgozat
             }
             if (String.IsNullOrEmpty(textBox3_user.Text))
             {
-                MessageBox.Show("Adjon meg felhasználónevet!","Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Adjon meg felhasználónevet!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             if (String.IsNullOrEmpty(textBox4_port.Text))
             {
@@ -87,15 +83,15 @@ namespace Zarodolgozat
                         }
                         i++;
                     }
+
                     imap.Close();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Helytelen bejelentkezés!","Információ",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Helytelen bejelentkezés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
             }
+  
         }
 
         private void Button1_bezar_Click(object sender, EventArgs e)
