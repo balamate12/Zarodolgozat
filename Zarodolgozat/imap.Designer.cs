@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1_imap = new System.Windows.Forms.Label();
             this.label2_port = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,18 +35,11 @@
             this.button1_bejelentkezes = new System.Windows.Forms.Button();
             this.textBox2_imap = new System.Windows.Forms.TextBox();
             this.textBox3_user = new System.Windows.Forms.TextBox();
-            this.textBox4_port = new System.Windows.Forms.TextBox();
             this.textBox5_password = new System.Windows.Forms.TextBox();
             this.button1_bezar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.maskedTextBox1_port = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 104);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(581, 334);
-            this.textBox1.TabIndex = 0;
             // 
             // label1_imap
             // 
@@ -109,13 +101,6 @@
             this.textBox3_user.Size = new System.Drawing.Size(160, 20);
             this.textBox3_user.TabIndex = 7;
             // 
-            // textBox4_port
-            // 
-            this.textBox4_port.Location = new System.Drawing.Point(292, 21);
-            this.textBox4_port.Name = "textBox4_port";
-            this.textBox4_port.Size = new System.Drawing.Size(164, 20);
-            this.textBox4_port.TabIndex = 8;
-            // 
             // textBox5_password
             // 
             this.textBox5_password.Location = new System.Drawing.Point(292, 59);
@@ -134,14 +119,32 @@
             this.button1_bezar.UseVisualStyleBackColor = true;
             this.button1_bezar.Click += new System.EventHandler(this.Button1_bezar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(217, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 11;
+            // 
+            // maskedTextBox1_port
+            // 
+            this.maskedTextBox1_port.Location = new System.Drawing.Point(292, 18);
+            this.maskedTextBox1_port.Mask = "00000";
+            this.maskedTextBox1_port.Name = "maskedTextBox1_port";
+            this.maskedTextBox1_port.Size = new System.Drawing.Size(164, 20);
+            this.maskedTextBox1_port.TabIndex = 12;
+            this.maskedTextBox1_port.ValidatingType = typeof(int);
+            // 
             // imap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 450);
+            this.ClientSize = new System.Drawing.Size(607, 151);
+            this.Controls.Add(this.maskedTextBox1_port);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1_bezar);
             this.Controls.Add(this.textBox5_password);
-            this.Controls.Add(this.textBox4_port);
             this.Controls.Add(this.textBox3_user);
             this.Controls.Add(this.textBox2_imap);
             this.Controls.Add(this.button1_bejelentkezes);
@@ -149,7 +152,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2_port);
             this.Controls.Add(this.label1_imap);
-            this.Controls.Add(this.textBox1);
             this.Name = "imap";
             this.Text = "Imap";
             this.Load += new System.EventHandler(this.Imap_Load);
@@ -159,8 +161,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1_imap;
         private System.Windows.Forms.Label label2_port;
         private System.Windows.Forms.Label label3;
@@ -168,8 +168,9 @@
         private System.Windows.Forms.Button button1_bejelentkezes;
         private System.Windows.Forms.TextBox textBox2_imap;
         private System.Windows.Forms.TextBox textBox3_user;
-        private System.Windows.Forms.TextBox textBox4_port;
         private System.Windows.Forms.TextBox textBox5_password;
         private System.Windows.Forms.Button button1_bezar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1_port;
     }
 }

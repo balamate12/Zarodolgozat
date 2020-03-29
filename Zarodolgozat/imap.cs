@@ -23,7 +23,7 @@ namespace Zarodolgozat
 
         private void Imap_Load(object sender, EventArgs e)
         {
-        textBox1.ScrollBars = ScrollBars.Vertical;
+
         }
 
         private void Button1_bejelentkezes_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace Zarodolgozat
             {
                 MessageBox.Show("Adjon meg felhasználónevet!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (String.IsNullOrEmpty(textBox4_port.Text))
+            if (String.IsNullOrEmpty(maskedTextBox1_port.Text))
             {
                 MessageBox.Show("Adjon meg portszámot!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -48,7 +48,7 @@ namespace Zarodolgozat
 
             string imapbe = textBox2_imap.Text;
             string user = textBox3_user.Text;
-            string port = Convert.ToString(textBox4_port.Text);
+            string port = Convert.ToString(maskedTextBox1_port.Text);
             string password = textBox5_password.Text;
 
             List<string> uzenet = new List<string>();
@@ -75,14 +75,24 @@ namespace Zarodolgozat
                             IMail email = new MailBuilder()
                                 .CreateFromEml(imap.GetMessageByUID(uid));
 
-                            //textBox1.Text = email.Subject;
-                            //textBox1.Text = email.Text;
+                            //textBox1.Text = email.Subject;     
+
+                            label1.Text = Convert.ToString(email.Text);
+
+                            if (!String.IsNullOrEmpty(label1.Text))
+                            {
+                                label1.Text= "Megrendelés feldolgozva!";
+                            }
 
                             uzenet.Add(email.Text);
 
                             imap.Close();
                         }
                         i++;
+                    }
+                    if (label1.Text == "")
+                    {
+                        label1.Text = "Nincs beérkezett megrendelés!";
                     }
 
 
@@ -160,8 +170,6 @@ namespace Zarodolgozat
                 Program.conn.Close();
 
             }
-
-           
 
         }
 
