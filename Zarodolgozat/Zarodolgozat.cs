@@ -37,6 +37,7 @@ namespace Zarodolgozat
                 column_id.HeaderText = "ID";
                 column_id.Name = "id";
                 column_id.CellTemplate = new DataGridViewTextBoxCell();
+                column_id.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(0, column_id);
 
@@ -46,6 +47,7 @@ namespace Zarodolgozat
                 column_ElofizetoNev.HeaderText = "Név";
                 column_ElofizetoNev.Name = "elofizetoneve";
                 column_ElofizetoNev.CellTemplate = new DataGridViewTextBoxCell();
+                column_ElofizetoNev.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(1, column_ElofizetoNev);
 
@@ -56,6 +58,7 @@ namespace Zarodolgozat
                 column_Szuletesineve.Name = "szuletesineve";
                 column_Szuletesineve.CellTemplate = new DataGridViewTextBoxCell();
                 column_Szuletesineve.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_Szuletesineve.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(2, column_Szuletesineve);
 
@@ -66,6 +69,7 @@ namespace Zarodolgozat
                 column_Szuletesihely.Name = "szuletesihely";
                 column_Szuletesihely.CellTemplate = new DataGridViewTextBoxCell();
                 column_Szuletesihely.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_Szuletesihely.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(3, column_Szuletesihely);
 
@@ -76,6 +80,7 @@ namespace Zarodolgozat
                 column_Szuletesiido.Name = "szuletesiido";
                 column_Szuletesiido.CellTemplate = new DataGridViewTextBoxCell();
                 column_Szuletesiido.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_Szuletesiido.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(4, column_Szuletesiido);
 
@@ -86,6 +91,7 @@ namespace Zarodolgozat
                 column_Anyjaneve.Name = "anyjaneve";
                 column_Anyjaneve.CellTemplate = new DataGridViewTextBoxCell();
                 column_Anyjaneve.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_Anyjaneve.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(5, column_Anyjaneve);
 
@@ -96,6 +102,7 @@ namespace Zarodolgozat
                 column_szemelyigazolvanszam.Name = "szemelyiszam";
                 column_szemelyigazolvanszam.CellTemplate = new DataGridViewTextBoxCell();
                 column_szemelyigazolvanszam.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_szemelyigazolvanszam.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(6, column_szemelyigazolvanszam);
 
@@ -106,6 +113,8 @@ namespace Zarodolgozat
                 column_telepitesicim.Name = "telepitesicim";
                 column_telepitesicim.CellTemplate = new DataGridViewTextBoxCell();
                 column_telepitesicim.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_telepitesicim.AutoSizeMode= DataGridViewAutoSizeColumnMode.DisplayedCells;
+                column_telepitesicim.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(7, column_telepitesicim);
 
@@ -116,6 +125,7 @@ namespace Zarodolgozat
                 column_postazasicim.Name = "postazasicim";
                 column_postazasicim.CellTemplate = new DataGridViewTextBoxCell();
                 column_postazasicim.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_postazasicim.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(8, column_postazasicim);
 
@@ -126,6 +136,7 @@ namespace Zarodolgozat
                 column_telefon.Name = "telefon";
                 column_telefon.CellTemplate = new DataGridViewTextBoxCell();
                 column_telefon.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_telefon.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(9, column_telefon);
 
@@ -136,6 +147,7 @@ namespace Zarodolgozat
                 column_email.Name = "email";
                 column_email.CellTemplate = new DataGridViewTextBoxCell();
                 column_email.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_email.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(10, column_email);
 
@@ -146,6 +158,7 @@ namespace Zarodolgozat
                 column_internetcsomag.Name = "internetcsomag";
                 column_internetcsomag.CellTemplate = new DataGridViewTextBoxCell();
                 column_internetcsomag.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_internetcsomag.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(11, column_internetcsomag);
 
@@ -156,6 +169,7 @@ namespace Zarodolgozat
                 column_fizetesimod.Name = "fizetesimod";
                 column_fizetesimod.CellTemplate = new DataGridViewTextBoxCell();
                 column_fizetesimod.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_fizetesimod.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(12, column_fizetesimod);
 
@@ -166,6 +180,7 @@ namespace Zarodolgozat
                 column_megjegyzes.Name = "megjegyzes";
                 column_megjegyzes.CellTemplate = new DataGridViewTextBoxCell();
                 column_megjegyzes.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                column_megjegyzes.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(13, column_megjegyzes);
 
@@ -213,7 +228,6 @@ namespace Zarodolgozat
             var imap = new imap();
             imap.Show();
         }
-
     }
 }
 

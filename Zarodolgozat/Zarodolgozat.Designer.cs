@@ -41,7 +41,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(945, 540);
+            this.dataGridView1.Size = new System.Drawing.Size(1171, 540);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1_manualis
@@ -74,8 +74,12 @@
             this.Controls.Add(this.button1_manualis);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(1207, 664);
+            this.MinimumSize = new System.Drawing.Size(1207, 664);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kezelő";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
