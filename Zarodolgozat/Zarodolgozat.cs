@@ -177,8 +177,8 @@ namespace Zarodolgozat
             //cellafeltöltés
             while (sqldatareader.Read())
             {
-                int uj_sor_index = dataGridView1.Rows.Add();
 
+                int uj_sor_index = dataGridView1.Rows.Add();
                 DataGridViewRow uj_sor = dataGridView1.Rows[uj_sor_index];
                 uj_sor.Cells["id"].Value = sqldatareader.GetInt32("id");
                 uj_sor.Cells["elofizetoneve"].Value = sqldatareader.GetString("elofizetoneve");
@@ -189,27 +189,15 @@ namespace Zarodolgozat
                 uj_sor.Cells["szemelyiszam"].Value = sqldatareader.GetString("szemelyiszam");
                 uj_sor.Cells["telepitesicim"].Value = sqldatareader.GetString("telepitesicim");
                 uj_sor.Cells["postazasicim"].Value = sqldatareader.GetString("postazasicim");
-                uj_sor.Cells["telepitesicim"].Value = sqldatareader.GetString("telepitesicim");
                 uj_sor.Cells["telefon"].Value = sqldatareader.GetString("telefonszam");
                 uj_sor.Cells["email"].Value = sqldatareader.GetString("email");
                 uj_sor.Cells["internetcsomag"].Value = sqldatareader.GetInt32("internetcsomag");
                 uj_sor.Cells["fizetesimod"].Value = sqldatareader.GetString("fizetesimod");
                 uj_sor.Cells["megjegyzes"].Value = sqldatareader.GetString("megjegyzes");
+
             }
+
             Program.conn.Close();
-            //select elofizetoneve from user
-
-            //ListView1.items.add(sqldatareader.GetString[0])
-
-            //Program.sqlparancs = Program.conn.CreateCommand();
-            //Program.sqlparancs.CommandText = "SELECT * FROM `users`";
-            //MySqlDataReader sqldataread = Program.sqlparancs.ExecuteReader();
-
-            //while (sqldataread.Read())
-            //{
-            //    listView1.Items.Add(sqldataread.GetString[0]);
-            //}
-            //Program.conn.Close();
 
 
         }
@@ -225,5 +213,7 @@ namespace Zarodolgozat
             var imap = new imap();
             imap.Show();
         }
+
     }
 }
+

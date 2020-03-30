@@ -74,15 +74,13 @@ namespace Zarodolgozat
                         {
                             IMail email = new MailBuilder()
                                 .CreateFromEml(imap.GetMessageByUID(uid));
-
-                            //textBox1.Text = email.Subject;     
+  
 
                             label1.Text = Convert.ToString(email.Text);
 
                             if (!String.IsNullOrEmpty(label1.Text))
                             {
                                 label1.Text = " ";
-
                             }
 
                             uzenet.Add(email.Text);
