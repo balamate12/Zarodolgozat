@@ -197,6 +197,21 @@ namespace Zarodolgozat
                 uj_sor.Cells["megjegyzes"].Value = sqldatareader.GetString("megjegyzes");
             }
             Program.conn.Close();
+            //select elofizetoneve from user
+
+            //ListView1.items.add(sqldatareader.GetString[0])
+
+            //Program.sqlparancs = Program.conn.CreateCommand();
+            //Program.sqlparancs.CommandText = "SELECT * FROM `users`";
+            //MySqlDataReader sqldataread = Program.sqlparancs.ExecuteReader();
+
+            //while (sqldataread.Read())
+            //{
+            //    listView1.Items.Add(sqldataread.GetString[0]);
+            //}
+            //Program.conn.Close();
+
+
         }
 
         private void Button1_manualis_Click(object sender, EventArgs e)

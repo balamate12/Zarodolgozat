@@ -81,7 +81,8 @@ namespace Zarodolgozat
 
                             if (!String.IsNullOrEmpty(label1.Text))
                             {
-                                label1.Text= "Megrendelés feldolgozva!";
+                                label1.Text = " ";
+
                             }
 
                             uzenet.Add(email.Text);
@@ -90,18 +91,24 @@ namespace Zarodolgozat
                         }
                         i++;
                     }
-                    if (label1.Text == "")
-                    {
-                        label1.Text = "Nincs beérkezett megrendelés!";
-                    }
-
-
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Helytelen bejelentkezés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            if (label1.Text == "")
+            {
+                MessageBox.Show("Nincs beérkezett megrendelés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (label1.Text == " ")
+            {
+                MessageBox.Show("Sikeres feltöltés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label1.Text = "";
+            }
+
+
 
             foreach (var item in uzenet)
             {
@@ -150,7 +157,6 @@ namespace Zarodolgozat
                 Program.conn.Open();
                 Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
                 Program.sqlparancs.Connection = Program.conn;
-
 
                 Program.sqlparancs.CommandText = "INSERT INTO `users` (`id`, `elofizetoneve`, `szuletesineve`, `szuletesihely`, `szuletesiido`, `anyjaszuletesineve`, `szemelyiszam`, `telepitesicim`, `postazasicim`, `telefonszam`, `email`, `internetcsomag`, `fizetesimod`, `megjegyzes`) VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
                 Program.sqlparancs.Parameters.Add("elofizetoneve", MySqlDbType.VarChar).Value = elofizetoneve;

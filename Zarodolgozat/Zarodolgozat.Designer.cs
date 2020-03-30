@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1_manualis = new System.Windows.Forms.Button();
             this.button1_imap = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +39,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 10);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(945, 540);
@@ -47,7 +48,7 @@
             // button1_manualis
             // 
             this.button1_manualis.Location = new System.Drawing.Point(26, 580);
-            this.button1_manualis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1_manualis.Margin = new System.Windows.Forms.Padding(2);
             this.button1_manualis.Name = "button1_manualis";
             this.button1_manualis.Size = new System.Drawing.Size(66, 19);
             this.button1_manualis.TabIndex = 1;
@@ -65,15 +66,24 @@
             this.button1_imap.UseVisualStyleBackColor = true;
             this.button1_imap.Click += new System.EventHandler(this.Button1_imap_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(983, 12);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(182, 538);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 625);
+            this.ClientSize = new System.Drawing.Size(1191, 625);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1_imap);
             this.Controls.Add(this.button1_manualis);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Kezelő";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -87,6 +97,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1_manualis;
         private System.Windows.Forms.Button button1_imap;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
