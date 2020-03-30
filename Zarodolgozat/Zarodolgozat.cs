@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Zarodolgozat
 {
@@ -113,7 +114,7 @@ namespace Zarodolgozat
                 column_telepitesicim.Name = "telepitesicim";
                 column_telepitesicim.CellTemplate = new DataGridViewTextBoxCell();
                 column_telepitesicim.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                column_telepitesicim.AutoSizeMode= DataGridViewAutoSizeColumnMode.DisplayedCells;
+                column_telepitesicim.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 column_telepitesicim.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
             dataGridView1.Columns.Insert(7, column_telepitesicim);
@@ -212,9 +213,9 @@ namespace Zarodolgozat
 
             }
 
+  
+
             Program.conn.Close();
-
-
         }
 
         private void Button1_manualis_Click(object sender, EventArgs e)
@@ -227,6 +228,18 @@ namespace Zarodolgozat
         {
             var imap = new imap();
             imap.Show();
+        }
+
+        private void Button1_kereses_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
+            else
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name='{0}'", textBox1.Text);
+            }
         }
     }
 }

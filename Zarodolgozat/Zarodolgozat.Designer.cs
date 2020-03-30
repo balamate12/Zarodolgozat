@@ -31,6 +31,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1_manualis = new System.Windows.Forms.Button();
             this.button1_imap = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1_kereses = new System.Windows.Forms.Label();
+            this.button1_kereses = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,15 +44,15 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1171, 540);
+            this.dataGridView1.Size = new System.Drawing.Size(887, 540);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1_manualis
             // 
-            this.button1_manualis.Location = new System.Drawing.Point(26, 580);
+            this.button1_manualis.Location = new System.Drawing.Point(11, 582);
             this.button1_manualis.Margin = new System.Windows.Forms.Padding(2);
             this.button1_manualis.Name = "button1_manualis";
-            this.button1_manualis.Size = new System.Drawing.Size(66, 19);
+            this.button1_manualis.Size = new System.Drawing.Size(133, 23);
             this.button1_manualis.TabIndex = 1;
             this.button1_manualis.Text = "Manuális";
             this.button1_manualis.UseVisualStyleBackColor = true;
@@ -57,7 +60,7 @@
             // 
             // button1_imap
             // 
-            this.button1_imap.Location = new System.Drawing.Point(128, 576);
+            this.button1_imap.Location = new System.Drawing.Point(185, 582);
             this.button1_imap.Name = "button1_imap";
             this.button1_imap.Size = new System.Drawing.Size(133, 23);
             this.button1_imap.TabIndex = 2;
@@ -65,11 +68,40 @@
             this.button1_imap.UseVisualStyleBackColor = true;
             this.button1_imap.Click += new System.EventHandler(this.Button1_imap_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(933, 54);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(246, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label1_kereses
+            // 
+            this.label1_kereses.AutoSize = true;
+            this.label1_kereses.Location = new System.Drawing.Point(930, 24);
+            this.label1_kereses.Name = "label1_kereses";
+            this.label1_kereses.Size = new System.Drawing.Size(48, 13);
+            this.label1_kereses.TabIndex = 4;
+            this.label1_kereses.Text = "Keresés:";
+            // 
+            // button1_kereses
+            // 
+            this.button1_kereses.Location = new System.Drawing.Point(1022, 98);
+            this.button1_kereses.Name = "button1_kereses";
+            this.button1_kereses.Size = new System.Drawing.Size(75, 23);
+            this.button1_kereses.TabIndex = 5;
+            this.button1_kereses.Text = "Keresés";
+            this.button1_kereses.UseVisualStyleBackColor = true;
+            this.button1_kereses.Click += new System.EventHandler(this.Button1_kereses_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 625);
+            this.Controls.Add(this.button1_kereses);
+            this.Controls.Add(this.label1_kereses);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1_imap);
             this.Controls.Add(this.button1_manualis);
             this.Controls.Add(this.dataGridView1);
@@ -83,6 +115,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,6 +124,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1_manualis;
         private System.Windows.Forms.Button button1_imap;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1_kereses;
+        private System.Windows.Forms.Button button1_kereses;
     }
 }
 
