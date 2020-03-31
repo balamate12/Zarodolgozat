@@ -177,6 +177,7 @@ namespace Zarodolgozat
 
         }
 
+
         private void Button1_bezar_Click(object sender, EventArgs e)
         {
             this.Close();
