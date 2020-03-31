@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+
 
 namespace Zarodolgozat
 {
@@ -16,11 +11,17 @@ namespace Zarodolgozat
         public Form1()
         {
             InitializeComponent();
+
         }
 
-        //static MySqlConnection conn = null;
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            datagrid();
+
+        }
+
+        public void datagrid()
         {
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
             Program.sqlparancs = Program.conn.CreateCommand();
@@ -30,6 +31,7 @@ namespace Zarodolgozat
 
             Program.conn.Close();
             Program.conn.Open();
+
             DataTable table = new DataTable();
             MyDA.Fill(table);
 
@@ -38,19 +40,27 @@ namespace Zarodolgozat
 
             dataGridView1.DataSource = bSource;
             Program.conn.Close();
+            DataSet ds = new DataSet();
+            ds.Clear();//clear before fill
+
+            MyDA.Fill(ds);
+
 
         }
+
 
         private void Button1_manualis_Click(object sender, EventArgs e)
         {
             var Manualis = new Manualis();
             Manualis.Show();
+
         }
 
         private void Button1_imap_Click(object sender, EventArgs e)
         {
             var imap = new imap();
             imap.Show();
+
         }
 
         private void Button1_kereses_Click(object sender, EventArgs e)
@@ -62,6 +72,7 @@ namespace Zarodolgozat
         {
 
         }
+
     }
 }
 

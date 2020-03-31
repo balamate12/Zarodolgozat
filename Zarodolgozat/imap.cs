@@ -115,41 +115,41 @@ namespace Zarodolgozat
                 StringSplitOptions.None
                 );
 
-                string[] sor = lines[12].Split(':');
+                string[] sor = lines[5].Split(':');
                 string elofizetoneve = sor[1];
 
-                string[] sor1 = lines[13].Split(':');
+                string[] sor1 = lines[6].Split(':');
                 string szuletesineve = sor1[1];
 
-                string[] sor2 = lines[14].Split(':',',');
-                string szuletesihely = sor2[2]; // születési hely
-                string szuletesiido = sor2[3]; //születési idő 
+                string[] sor2 = lines[7].Split(':',' ');
+                string szuletesihely = sor2[4]; // születési hely
+                string szuletesiido = sor2[5]+"."+ sor2[6]+"."+sor2[7]; //születési idő 
 
-                string[] sor3 = lines[15].Split(':');
+                string[] sor3 = lines[8].Split(':');
                 string anyjaszuletesineve = sor3[1];
 
-                string[] sor4 = lines[16].Split(':');
+                string[] sor4 = lines[9].Split(':');
                 string szemelyiszama = sor4[1];
 
-                string[] sor5 = lines[17].Split(':');
+                string[] sor5 = lines[10].Split(':');
                 string telepitesicim = sor5[1];
 
-                string[] sor6 = lines[18].Split(':');
+                string[] sor6 = lines[11].Split(':');
                 string postazasicim = sor6[1];
 
-                string[] sor7 = lines[19].Split(':');
+                string[] sor7 = lines[12].Split(':');
                 string telefonszam = sor7[1];
 
-                string[] sor8 = lines[20].Split(':');
+                string[] sor8 = lines[13].Split(':');
                 string email = sor8[1];
 
-                string[] sor9 = lines[21].Split(':');
+                string[] sor9 = lines[14].Split(':');
                 string intertnetcsomag = sor9[1];
 
-                string[] sor10 = lines[22].Split(':');
+                string[] sor10 = lines[15].Split(':');
                 string fizetesimod = sor10[1];
 
-                string[] sor11 = lines[23].Split(':');
+                string[] sor11 = lines[16].Split(':');
                 string megjegyzes = sor11[1];
 
                 Program.conn.Open();
@@ -177,10 +177,10 @@ namespace Zarodolgozat
 
         }
 
-
         private void Button1_bezar_Click(object sender, EventArgs e)
         {
             this.Close();
+           
         }
     }
 }

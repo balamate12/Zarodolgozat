@@ -190,7 +190,7 @@
             // textBox1_elofizetoneve
             // 
             this.textBox1_elofizetoneve.Location = new System.Drawing.Point(16, 46);
-            this.textBox1_elofizetoneve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1_elofizetoneve.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1_elofizetoneve.Name = "textBox1_elofizetoneve";
             this.textBox1_elofizetoneve.Size = new System.Drawing.Size(299, 20);
             this.textBox1_elofizetoneve.TabIndex = 13;
@@ -198,7 +198,7 @@
             // textBox1_szuletesineve
             // 
             this.textBox1_szuletesineve.Location = new System.Drawing.Point(18, 103);
-            this.textBox1_szuletesineve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1_szuletesineve.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1_szuletesineve.Name = "textBox1_szuletesineve";
             this.textBox1_szuletesineve.Size = new System.Drawing.Size(296, 20);
             this.textBox1_szuletesineve.TabIndex = 14;
@@ -206,7 +206,7 @@
             // textBox1_szuletesihelye
             // 
             this.textBox1_szuletesihelye.Location = new System.Drawing.Point(18, 161);
-            this.textBox1_szuletesihelye.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1_szuletesihelye.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1_szuletesihelye.Name = "textBox1_szuletesihelye";
             this.textBox1_szuletesihelye.Size = new System.Drawing.Size(296, 20);
             this.textBox1_szuletesihelye.TabIndex = 15;
@@ -214,7 +214,7 @@
             // dateTimePicker1_szuletesiideje
             // 
             this.dateTimePicker1_szuletesiideje.Location = new System.Drawing.Point(16, 229);
-            this.dateTimePicker1_szuletesiideje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1_szuletesiideje.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1_szuletesiideje.Name = "dateTimePicker1_szuletesiideje";
             this.dateTimePicker1_szuletesiideje.Size = new System.Drawing.Size(299, 20);
             this.dateTimePicker1_szuletesiideje.TabIndex = 16;
@@ -222,7 +222,7 @@
             // textBox1_anyjaszuletesineve
             // 
             this.textBox1_anyjaszuletesineve.Location = new System.Drawing.Point(18, 291);
-            this.textBox1_anyjaszuletesineve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1_anyjaszuletesineve.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1_anyjaszuletesineve.Name = "textBox1_anyjaszuletesineve";
             this.textBox1_anyjaszuletesineve.Size = new System.Drawing.Size(296, 20);
             this.textBox1_anyjaszuletesineve.TabIndex = 17;
@@ -230,7 +230,7 @@
             // textBox1_szemelyigazolvanyszama
             // 
             this.textBox1_szemelyigazolvanyszama.Location = new System.Drawing.Point(18, 351);
-            this.textBox1_szemelyigazolvanyszama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1_szemelyigazolvanyszama.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1_szemelyigazolvanyszama.Name = "textBox1_szemelyigazolvanyszama";
             this.textBox1_szemelyigazolvanyszama.Size = new System.Drawing.Size(296, 20);
             this.textBox1_szemelyigazolvanyszama.TabIndex = 18;
@@ -238,7 +238,7 @@
             // textBox2_telepitesicim
             // 
             this.textBox2_telepitesicim.Location = new System.Drawing.Point(380, 46);
-            this.textBox2_telepitesicim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2_telepitesicim.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2_telepitesicim.Name = "textBox2_telepitesicim";
             this.textBox2_telepitesicim.Size = new System.Drawing.Size(288, 20);
             this.textBox2_telepitesicim.TabIndex = 19;
@@ -246,7 +246,7 @@
             // textBox3_postazasicim
             // 
             this.textBox3_postazasicim.Location = new System.Drawing.Point(380, 103);
-            this.textBox3_postazasicim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3_postazasicim.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3_postazasicim.Name = "textBox3_postazasicim";
             this.textBox3_postazasicim.Size = new System.Drawing.Size(288, 20);
             this.textBox3_postazasicim.TabIndex = 20;
@@ -254,7 +254,7 @@
             // textBox5_email
             // 
             this.textBox5_email.Location = new System.Drawing.Point(380, 229);
-            this.textBox5_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5_email.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5_email.Name = "textBox5_email";
             this.textBox5_email.Size = new System.Drawing.Size(288, 20);
             this.textBox5_email.TabIndex = 22;
@@ -263,7 +263,7 @@
             // 
             this.listBox1_internetcsomag.FormattingEnabled = true;
             this.listBox1_internetcsomag.Location = new System.Drawing.Point(380, 291);
-            this.listBox1_internetcsomag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1_internetcsomag.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1_internetcsomag.Name = "listBox1_internetcsomag";
             this.listBox1_internetcsomag.Size = new System.Drawing.Size(288, 17);
             this.listBox1_internetcsomag.TabIndex = 23;
@@ -272,7 +272,7 @@
             // 
             this.listBox2_fizetesimod.FormattingEnabled = true;
             this.listBox2_fizetesimod.Location = new System.Drawing.Point(380, 351);
-            this.listBox2_fizetesimod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox2_fizetesimod.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2_fizetesimod.Name = "listBox2_fizetesimod";
             this.listBox2_fizetesimod.Size = new System.Drawing.Size(288, 17);
             this.listBox2_fizetesimod.TabIndex = 24;
@@ -280,7 +280,7 @@
             // textBox6_megjegyzes
             // 
             this.textBox6_megjegyzes.Location = new System.Drawing.Point(18, 421);
-            this.textBox6_megjegyzes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6_megjegyzes.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6_megjegyzes.Multiline = true;
             this.textBox6_megjegyzes.Name = "textBox6_megjegyzes";
             this.textBox6_megjegyzes.Size = new System.Drawing.Size(650, 136);
@@ -289,7 +289,7 @@
             // button1_kuld
             // 
             this.button1_kuld.Location = new System.Drawing.Point(316, 591);
-            this.button1_kuld.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1_kuld.Margin = new System.Windows.Forms.Padding(2);
             this.button1_kuld.Name = "button1_kuld";
             this.button1_kuld.Size = new System.Drawing.Size(56, 19);
             this.button1_kuld.TabIndex = 26;
@@ -300,7 +300,7 @@
             // maskedTextBox2_telefonszam
             // 
             this.maskedTextBox2_telefonszam.Location = new System.Drawing.Point(380, 161);
-            this.maskedTextBox2_telefonszam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBox2_telefonszam.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBox2_telefonszam.Mask = "00000000000";
             this.maskedTextBox2_telefonszam.Name = "maskedTextBox2_telefonszam";
             this.maskedTextBox2_telefonszam.Size = new System.Drawing.Size(288, 20);
@@ -338,7 +338,7 @@
             this.Controls.Add(this.label3_szuletesihelye);
             this.Controls.Add(this.label2_szuletesineve);
             this.Controls.Add(this.label1_elofizetoneve);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Manualis";
             this.Text = "Manualis";
             this.Load += new System.EventHandler(this.Manualis_Load);
