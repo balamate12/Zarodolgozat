@@ -35,6 +35,7 @@ namespace Zarodolgozat
 
         }
 
+
         private void Button1_kuld_Click(object sender, EventArgs e)
         {
             string elofizetoneve = textBox1_elofizetoneve.Text;
@@ -81,7 +82,7 @@ namespace Zarodolgozat
             else
                 this.Close();
 
-
+            
         }
     }
 }

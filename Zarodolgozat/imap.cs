@@ -115,11 +115,43 @@ namespace Zarodolgozat
                 StringSplitOptions.None
                 );
 
+                string nev = "";
                 string[] sor = lines[5].Split(':');
                 string elofizetoneve = sor[1];
 
+                for (int i = 0; i < elofizetoneve.Length; i++)
+                {
+                    if (elofizetoneve[0] != ' ')
+                    {
+                        nev += elofizetoneve[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += elofizetoneve[i];
+                    }
+                }
+
+                elofizetoneve = nev;
+
+
+
+
                 string[] sor1 = lines[6].Split(':');
                 string szuletesineve = sor1[1];
+
+                for (int i = 0; i < szuletesineve.Length; i++)
+                {
+                    if (szuletesineve[0] != ' ')
+                    {
+                        nev += szuletesineve[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += szuletesineve[i];
+                    }
+                }
+
+                szuletesineve = nev;
 
                 string[] sor2 = lines[7].Split(':',' ');
                 string szuletesihely = sor2[4]; // születési hely
@@ -152,7 +184,7 @@ namespace Zarodolgozat
                 string[] sor11 = lines[16].Split(':');
                 string megjegyzes = sor11[1];
 
-                Program.conn.Open();
+                
                 Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
                 Program.sqlparancs.Connection = Program.conn;
 
@@ -170,6 +202,7 @@ namespace Zarodolgozat
                 Program.sqlparancs.Parameters.Add("internetcsomag", MySqlDbType.String).Value = intertnetcsomag;
                 Program.sqlparancs.Parameters.Add("fizetesimod", MySqlDbType.String).Value = fizetesimod;
                 Program.sqlparancs.Parameters.Add("megjegyzes", MySqlDbType.VarChar).Value = megjegyzes;
+                Program.conn.Open();
                 Program.sqlparancs.ExecuteNonQuery();
                 Program.conn.Close();
 

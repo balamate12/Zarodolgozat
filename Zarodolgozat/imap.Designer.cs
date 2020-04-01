@@ -92,14 +92,14 @@
             this.textBox2_imap.Location = new System.Drawing.Point(67, 18);
             this.textBox2_imap.Name = "textBox2_imap";
             this.textBox2_imap.Size = new System.Drawing.Size(160, 20);
-            this.textBox2_imap.TabIndex = 6;
+            this.textBox2_imap.TabIndex = 1;
             // 
             // textBox3_user
             // 
             this.textBox3_user.Location = new System.Drawing.Point(67, 59);
             this.textBox3_user.Name = "textBox3_user";
             this.textBox3_user.Size = new System.Drawing.Size(160, 20);
-            this.textBox3_user.TabIndex = 7;
+            this.textBox3_user.TabIndex = 3;
             // 
             // textBox5_password
             // 
@@ -107,14 +107,14 @@
             this.textBox5_password.Name = "textBox5_password";
             this.textBox5_password.PasswordChar = '*';
             this.textBox5_password.Size = new System.Drawing.Size(164, 20);
-            this.textBox5_password.TabIndex = 9;
+            this.textBox5_password.TabIndex = 4;
             // 
             // button1_bezar
             // 
             this.button1_bezar.Location = new System.Drawing.Point(486, 59);
             this.button1_bezar.Name = "button1_bezar";
             this.button1_bezar.Size = new System.Drawing.Size(75, 23);
-            this.button1_bezar.TabIndex = 10;
+            this.button1_bezar.TabIndex = 6;
             this.button1_bezar.Text = "Bezárás";
             this.button1_bezar.UseVisualStyleBackColor = true;
             this.button1_bezar.Click += new System.EventHandler(this.Button1_bezar_Click);
@@ -133,14 +133,14 @@
             this.maskedTextBox1_port.Mask = "00000";
             this.maskedTextBox1_port.Name = "maskedTextBox1_port";
             this.maskedTextBox1_port.Size = new System.Drawing.Size(164, 20);
-            this.maskedTextBox1_port.TabIndex = 12;
+            this.maskedTextBox1_port.TabIndex = 2;
             this.maskedTextBox1_port.ValidatingType = typeof(int);
             // 
             // imap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 151);
+            this.ClientSize = new System.Drawing.Size(607, 99);
             this.Controls.Add(this.maskedTextBox1_port);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1_bezar);

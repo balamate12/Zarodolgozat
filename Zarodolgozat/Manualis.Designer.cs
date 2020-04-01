@@ -213,6 +213,7 @@
             // 
             // dateTimePicker1_szuletesiideje
             // 
+            this.dateTimePicker1_szuletesiideje.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1_szuletesiideje.Location = new System.Drawing.Point(16, 229);
             this.dateTimePicker1_szuletesiideje.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1_szuletesiideje.Name = "dateTimePicker1_szuletesiideje";
@@ -304,7 +305,7 @@
             this.maskedTextBox2_telefonszam.Mask = "00000000000";
             this.maskedTextBox2_telefonszam.Name = "maskedTextBox2_telefonszam";
             this.maskedTextBox2_telefonszam.Size = new System.Drawing.Size(288, 20);
-            this.maskedTextBox2_telefonszam.TabIndex = 28;
+            this.maskedTextBox2_telefonszam.TabIndex = 21;
             // 
             // Manualis
             // 
@@ -340,6 +341,7 @@
             this.Controls.Add(this.label1_elofizetoneve);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Manualis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manualis";
             this.Load += new System.EventHandler(this.Manualis_Load);
             this.ResumeLayout(false);

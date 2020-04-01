@@ -62,6 +62,12 @@
     <Compile Include="Manualis.Designer.cs">
       <DependentUpon>Manualis.cs</DependentUpon>
     </Compile>
+    <Compile Include="plista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="plista.Designer.cs">
+      <DependentUpon>plista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zarodolgozat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manualis.resx">
       <DependentUpon>Manualis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plista.resx">
+      <DependentUpon>plista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Zarodolgozat.resx">
       <DependentUpon>Zarodolgozat.cs</DependentUpon>
