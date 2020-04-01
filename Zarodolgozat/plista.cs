@@ -51,17 +51,7 @@ namespace Zarodolgozat
             dataGridView1.AutoResizeRows();
 
 
-            listBox1_internetcsomag.Items.Add("8");
-            listBox1_internetcsomag.Items.Add("15");
-            listBox1_internetcsomag.Items.Add("30");
-            listBox1_internetcsomag.Items.Add("60");
 
-
-
-
-            listBox2_fizetesimod.Items.Add("Posta");
-            listBox2_fizetesimod.Items.Add("Banki átutalás");
-            listBox2_fizetesimod.Items.Add("Elektronikus számla");
 
         }
 
@@ -94,6 +84,18 @@ namespace Zarodolgozat
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
+            listBox1_internetcsomag.Items.Add("8");
+            listBox1_internetcsomag.Items.Add("15");
+            listBox1_internetcsomag.Items.Add("30");
+            listBox1_internetcsomag.Items.Add("60");
+
+
+
+
+            listBox2_fizetesimod.Items.Add("Csekk");
+            listBox2_fizetesimod.Items.Add("Banki átutalás");
+            listBox2_fizetesimod.Items.Add("Elektronikus számla");
+
             string searchValue = textBox1.Text;
             int rowIndex = -1;
 
@@ -123,12 +125,11 @@ namespace Zarodolgozat
                                 textBox2_szulideje.Text = rdr.GetString(4);
                                 textBox3_anyjaszulneve.Text = rdr.GetString(5);
                                 textBox4_szemelyiszam.Text = rdr.GetString(6);
-                                textBox5_telepitesicim.Text = rdr.GetString(6);
-                                textbox6_postazasicim.Text = rdr.GetString(7);
-                                maskedTextBox1_telefonszam.Text = rdr.GetString(8);
-                                textBox7_email.Text = rdr.GetString(9);
-                                listBox1_internetcsomag.Text = rdr.GetString(10);
-                                listBox2_fizetesimod.Text = rdr.GetString(11);
+                                textBox5_telepitesicim.Text = rdr.GetString(7);
+                                textbox6_postazasicim.Text = rdr.GetString(8);
+                                maskedTextBox1_telefonszam.Text = rdr.GetString(9);
+                                textBox7_email.Text = rdr.GetString(10);
+                                listBox1_internetcsomag.Text = rdr.GetString(11);
                                 listBox2_fizetesimod.Text = rdr.GetString(12);
                                 textBox8_megjegyzes.Text = rdr.GetString(13);
                             }

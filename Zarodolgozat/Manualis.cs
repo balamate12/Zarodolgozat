@@ -28,10 +28,10 @@ namespace Zarodolgozat
 
 
 
-            listBox2_fizetesimod.Items.Add("Posta");
+            listBox2_fizetesimod.Items.Add("Csekk");
             listBox2_fizetesimod.Items.Add("Banki átutalás");
             listBox2_fizetesimod.Items.Add("Elektronikus számla");
-            listBox2_fizetesimod.SelectedItem = "Posta";
+            listBox2_fizetesimod.SelectedItem = "Csekk";
 
         }
 

@@ -134,7 +134,7 @@ namespace Zarodolgozat
                 elofizetoneve = nev;
 
 
-
+                nev = "";
 
                 string[] sor1 = lines[6].Split(':');
                 string szuletesineve = sor1[1];
