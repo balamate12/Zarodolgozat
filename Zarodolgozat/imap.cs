@@ -28,7 +28,7 @@ namespace Zarodolgozat
 
         private void Button1_bejelentkezes_Click(object sender, EventArgs e)
         {
-            //imap.gmail.com || 993
+
             if (String.IsNullOrEmpty(textBox2_imap.Text))
             {
                 MessageBox.Show("Adjon meg imap elérhetőséget!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -74,14 +74,9 @@ namespace Zarodolgozat
                         {
                             IMail email = new MailBuilder()
                                 .CreateFromEml(imap.GetMessageByUID(uid));
-  
+
 
                             label1.Text = Convert.ToString(email.Text);
-
-                            if (!String.IsNullOrEmpty(label1.Text))
-                            {
-                                label1.Text = " ";
-                            }
 
                             uzenet.Add(email.Text);
 
@@ -96,15 +91,17 @@ namespace Zarodolgozat
                 MessageBox.Show("Helytelen bejelentkezés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            if (label1.Text == "")
+
+            if (!String.IsNullOrEmpty(label1.Text))
+            {
+
+                MessageBox.Show("Sikeres feltöltés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (String.IsNullOrEmpty(label1.Text))
             {
                 MessageBox.Show("Nincs beérkezett megrendelés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (label1.Text == " ")
-            {
-                MessageBox.Show("Sikeres feltöltés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                label1.Text = "";
-            }
+
 
 
 

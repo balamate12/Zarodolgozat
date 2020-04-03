@@ -57,6 +57,8 @@
             this.textbox6_postazasicim = new System.Windows.Forms.TextBox();
             this.textBox7_email = new System.Windows.Forms.TextBox();
             this.textBox8_megjegyzes = new System.Windows.Forms.TextBox();
+            this.button1_importcsv = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,14 +67,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 71);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(973, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(1190, 266);
             this.dataGridView1.TabIndex = 0;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(132, 25);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(853, 20);
+            this.textBox1.Size = new System.Drawing.Size(1070, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
@@ -88,21 +90,21 @@
             // 
             // textBox2_eloneve
             // 
-            this.textBox2_eloneve.Location = new System.Drawing.Point(132, 367);
+            this.textBox2_eloneve.Location = new System.Drawing.Point(337, 368);
             this.textBox2_eloneve.Name = "textBox2_eloneve";
             this.textBox2_eloneve.Size = new System.Drawing.Size(220, 20);
             this.textBox2_eloneve.TabIndex = 4;
             // 
             // textBox3_szulneve
             // 
-            this.textBox3_szulneve.Location = new System.Drawing.Point(132, 406);
+            this.textBox3_szulneve.Location = new System.Drawing.Point(337, 407);
             this.textBox3_szulneve.Name = "textBox3_szulneve";
             this.textBox3_szulneve.Size = new System.Drawing.Size(220, 20);
             this.textBox3_szulneve.TabIndex = 5;
             // 
             // textBox4_szulhely
             // 
-            this.textBox4_szulhely.Location = new System.Drawing.Point(132, 441);
+            this.textBox4_szulhely.Location = new System.Drawing.Point(337, 442);
             this.textBox4_szulhely.Name = "textBox4_szulhely";
             this.textBox4_szulhely.Size = new System.Drawing.Size(220, 20);
             this.textBox4_szulhely.TabIndex = 6;
@@ -110,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 367);
+            this.label1.Location = new System.Drawing.Point(221, 368);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 7;
@@ -119,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 406);
+            this.label2.Location = new System.Drawing.Point(221, 407);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 8;
@@ -128,7 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 441);
+            this.label3.Location = new System.Drawing.Point(221, 442);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 9;
@@ -137,7 +139,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 477);
+            this.label4.Location = new System.Drawing.Point(221, 478);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 13);
             this.label4.TabIndex = 10;
@@ -146,7 +148,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 511);
+            this.label5.Location = new System.Drawing.Point(221, 512);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 11;
@@ -155,7 +157,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 554);
+            this.label6.Location = new System.Drawing.Point(221, 555);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 12;
@@ -164,7 +166,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(384, 367);
+            this.label7.Location = new System.Drawing.Point(589, 368);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
             this.label7.TabIndex = 13;
@@ -173,7 +175,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(384, 406);
+            this.label8.Location = new System.Drawing.Point(589, 407);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 14;
@@ -182,7 +184,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(384, 441);
+            this.label9.Location = new System.Drawing.Point(589, 442);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 13);
             this.label9.TabIndex = 15;
@@ -191,7 +193,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(384, 477);
+            this.label10.Location = new System.Drawing.Point(589, 478);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 16;
@@ -200,7 +202,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(384, 511);
+            this.label11.Location = new System.Drawing.Point(589, 512);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 13);
             this.label11.TabIndex = 17;
@@ -209,7 +211,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(384, 554);
+            this.label12.Location = new System.Drawing.Point(589, 555);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 13);
             this.label12.TabIndex = 18;
@@ -218,7 +220,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 600);
+            this.label13.Location = new System.Drawing.Point(221, 601);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 13);
             this.label13.TabIndex = 19;
@@ -227,7 +229,7 @@
             // listBox1_internetcsomag
             // 
             this.listBox1_internetcsomag.FormattingEnabled = true;
-            this.listBox1_internetcsomag.Location = new System.Drawing.Point(475, 511);
+            this.listBox1_internetcsomag.Location = new System.Drawing.Point(680, 512);
             this.listBox1_internetcsomag.Name = "listBox1_internetcsomag";
             this.listBox1_internetcsomag.Size = new System.Drawing.Size(220, 17);
             this.listBox1_internetcsomag.TabIndex = 20;
@@ -235,49 +237,49 @@
             // listBox2_fizetesimod
             // 
             this.listBox2_fizetesimod.FormattingEnabled = true;
-            this.listBox2_fizetesimod.Location = new System.Drawing.Point(475, 554);
+            this.listBox2_fizetesimod.Location = new System.Drawing.Point(680, 555);
             this.listBox2_fizetesimod.Name = "listBox2_fizetesimod";
             this.listBox2_fizetesimod.Size = new System.Drawing.Size(220, 17);
             this.listBox2_fizetesimod.TabIndex = 21;
             // 
             // maskedTextBox1_telefonszam
             // 
-            this.maskedTextBox1_telefonszam.Location = new System.Drawing.Point(475, 438);
+            this.maskedTextBox1_telefonszam.Location = new System.Drawing.Point(680, 439);
             this.maskedTextBox1_telefonszam.Name = "maskedTextBox1_telefonszam";
             this.maskedTextBox1_telefonszam.Size = new System.Drawing.Size(220, 20);
             this.maskedTextBox1_telefonszam.TabIndex = 22;
             // 
             // textBox2_szulideje
             // 
-            this.textBox2_szulideje.Location = new System.Drawing.Point(132, 477);
+            this.textBox2_szulideje.Location = new System.Drawing.Point(337, 478);
             this.textBox2_szulideje.Name = "textBox2_szulideje";
             this.textBox2_szulideje.Size = new System.Drawing.Size(220, 20);
             this.textBox2_szulideje.TabIndex = 23;
             // 
             // textBox3_anyjaszulneve
             // 
-            this.textBox3_anyjaszulneve.Location = new System.Drawing.Point(132, 511);
+            this.textBox3_anyjaszulneve.Location = new System.Drawing.Point(337, 512);
             this.textBox3_anyjaszulneve.Name = "textBox3_anyjaszulneve";
             this.textBox3_anyjaszulneve.Size = new System.Drawing.Size(220, 20);
             this.textBox3_anyjaszulneve.TabIndex = 24;
             // 
             // textBox4_szemelyiszam
             // 
-            this.textBox4_szemelyiszam.Location = new System.Drawing.Point(132, 554);
+            this.textBox4_szemelyiszam.Location = new System.Drawing.Point(337, 555);
             this.textBox4_szemelyiszam.Name = "textBox4_szemelyiszam";
             this.textBox4_szemelyiszam.Size = new System.Drawing.Size(220, 20);
             this.textBox4_szemelyiszam.TabIndex = 25;
             // 
             // textBox5_telepitesicim
             // 
-            this.textBox5_telepitesicim.Location = new System.Drawing.Point(475, 367);
+            this.textBox5_telepitesicim.Location = new System.Drawing.Point(680, 368);
             this.textBox5_telepitesicim.Name = "textBox5_telepitesicim";
             this.textBox5_telepitesicim.Size = new System.Drawing.Size(220, 20);
             this.textBox5_telepitesicim.TabIndex = 26;
             // 
             // textbox6_postazasicim
             // 
-            this.textbox6_postazasicim.Location = new System.Drawing.Point(475, 406);
+            this.textbox6_postazasicim.Location = new System.Drawing.Point(680, 407);
             this.textbox6_postazasicim.Name = "textbox6_postazasicim";
             this.textbox6_postazasicim.Size = new System.Drawing.Size(220, 20);
             this.textbox6_postazasicim.TabIndex = 27;
@@ -285,24 +287,35 @@
             // 
             // textBox7_email
             // 
-            this.textBox7_email.Location = new System.Drawing.Point(475, 470);
+            this.textBox7_email.Location = new System.Drawing.Point(680, 471);
             this.textBox7_email.Name = "textBox7_email";
             this.textBox7_email.Size = new System.Drawing.Size(220, 20);
             this.textBox7_email.TabIndex = 28;
             // 
             // textBox8_megjegyzes
             // 
-            this.textBox8_megjegyzes.Location = new System.Drawing.Point(132, 600);
+            this.textBox8_megjegyzes.Location = new System.Drawing.Point(337, 601);
             this.textBox8_megjegyzes.Multiline = true;
             this.textBox8_megjegyzes.Name = "textBox8_megjegyzes";
             this.textBox8_megjegyzes.Size = new System.Drawing.Size(563, 61);
             this.textBox8_megjegyzes.TabIndex = 29;
             // 
+            // button1_importcsv
+            // 
+            this.button1_importcsv.Location = new System.Drawing.Point(1127, 365);
+            this.button1_importcsv.Name = "button1_importcsv";
+            this.button1_importcsv.Size = new System.Drawing.Size(75, 23);
+            this.button1_importcsv.TabIndex = 30;
+            this.button1_importcsv.Text = "Import CSV";
+            this.button1_importcsv.UseVisualStyleBackColor = true;
+            this.button1_importcsv.Click += new System.EventHandler(this.button1_importcsv_Click);
+            // 
             // plista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 689);
+            this.ClientSize = new System.Drawing.Size(1214, 722);
+            this.Controls.Add(this.button1_importcsv);
             this.Controls.Add(this.textBox8_megjegyzes);
             this.Controls.Add(this.textBox7_email);
             this.Controls.Add(this.textbox6_postazasicim);
@@ -373,5 +386,7 @@
         private System.Windows.Forms.TextBox textbox6_postazasicim;
         private System.Windows.Forms.TextBox textBox7_email;
         private System.Windows.Forms.TextBox textBox8_megjegyzes;
+        private System.Windows.Forms.Button button1_importcsv;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
