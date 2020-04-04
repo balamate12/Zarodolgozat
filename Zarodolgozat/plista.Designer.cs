@@ -50,7 +50,6 @@
             this.listBox1_internetcsomag = new System.Windows.Forms.ListBox();
             this.listBox2_fizetesimod = new System.Windows.Forms.ListBox();
             this.maskedTextBox1_telefonszam = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2_szulideje = new System.Windows.Forms.TextBox();
             this.textBox3_anyjaszulneve = new System.Windows.Forms.TextBox();
             this.textBox4_szemelyiszam = new System.Windows.Forms.TextBox();
             this.textBox5_telepitesicim = new System.Windows.Forms.TextBox();
@@ -59,6 +58,8 @@
             this.textBox8_megjegyzes = new System.Windows.Forms.TextBox();
             this.button1_importcsv = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.button1_modositas = new System.Windows.Forms.Button();
+            this.dateTimePicker1_szulido = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +70,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1190, 266);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // textBox1
             // 
@@ -229,6 +231,11 @@
             // listBox1_internetcsomag
             // 
             this.listBox1_internetcsomag.FormattingEnabled = true;
+            this.listBox1_internetcsomag.Items.AddRange(new object[] {
+            "8",
+            "15",
+            "30",
+            "60"});
             this.listBox1_internetcsomag.Location = new System.Drawing.Point(680, 512);
             this.listBox1_internetcsomag.Name = "listBox1_internetcsomag";
             this.listBox1_internetcsomag.Size = new System.Drawing.Size(220, 17);
@@ -237,6 +244,10 @@
             // listBox2_fizetesimod
             // 
             this.listBox2_fizetesimod.FormattingEnabled = true;
+            this.listBox2_fizetesimod.Items.AddRange(new object[] {
+            "Csekk",
+            "Banki átutalás",
+            "Elektronikus számla"});
             this.listBox2_fizetesimod.Location = new System.Drawing.Point(680, 555);
             this.listBox2_fizetesimod.Name = "listBox2_fizetesimod";
             this.listBox2_fizetesimod.Size = new System.Drawing.Size(220, 17);
@@ -248,13 +259,6 @@
             this.maskedTextBox1_telefonszam.Name = "maskedTextBox1_telefonszam";
             this.maskedTextBox1_telefonszam.Size = new System.Drawing.Size(220, 20);
             this.maskedTextBox1_telefonszam.TabIndex = 22;
-            // 
-            // textBox2_szulideje
-            // 
-            this.textBox2_szulideje.Location = new System.Drawing.Point(337, 478);
-            this.textBox2_szulideje.Name = "textBox2_szulideje";
-            this.textBox2_szulideje.Size = new System.Drawing.Size(220, 20);
-            this.textBox2_szulideje.TabIndex = 23;
             // 
             // textBox3_anyjaszulneve
             // 
@@ -283,7 +287,6 @@
             this.textbox6_postazasicim.Name = "textbox6_postazasicim";
             this.textbox6_postazasicim.Size = new System.Drawing.Size(220, 20);
             this.textbox6_postazasicim.TabIndex = 27;
-            this.textbox6_postazasicim.TextChanged += new System.EventHandler(this.TextBox6_TextChanged);
             // 
             // textBox7_email
             // 
@@ -302,7 +305,7 @@
             // 
             // button1_importcsv
             // 
-            this.button1_importcsv.Location = new System.Drawing.Point(1127, 365);
+            this.button1_importcsv.Location = new System.Drawing.Point(947, 440);
             this.button1_importcsv.Name = "button1_importcsv";
             this.button1_importcsv.Size = new System.Drawing.Size(75, 23);
             this.button1_importcsv.TabIndex = 30;
@@ -310,11 +313,31 @@
             this.button1_importcsv.UseVisualStyleBackColor = true;
             this.button1_importcsv.Click += new System.EventHandler(this.button1_importcsv_Click);
             // 
+            // button1_modositas
+            // 
+            this.button1_modositas.Location = new System.Drawing.Point(947, 502);
+            this.button1_modositas.Name = "button1_modositas";
+            this.button1_modositas.Size = new System.Drawing.Size(75, 23);
+            this.button1_modositas.TabIndex = 31;
+            this.button1_modositas.Text = "Módosítás";
+            this.button1_modositas.UseVisualStyleBackColor = true;
+            this.button1_modositas.Click += new System.EventHandler(this.button1_modositas_Click);
+            // 
+            // dateTimePicker1_szulido
+            // 
+            this.dateTimePicker1_szulido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1_szulido.Location = new System.Drawing.Point(337, 478);
+            this.dateTimePicker1_szulido.Name = "dateTimePicker1_szulido";
+            this.dateTimePicker1_szulido.Size = new System.Drawing.Size(220, 20);
+            this.dateTimePicker1_szulido.TabIndex = 32;
+            // 
             // plista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 722);
+            this.Controls.Add(this.dateTimePicker1_szulido);
+            this.Controls.Add(this.button1_modositas);
             this.Controls.Add(this.button1_importcsv);
             this.Controls.Add(this.textBox8_megjegyzes);
             this.Controls.Add(this.textBox7_email);
@@ -322,7 +345,6 @@
             this.Controls.Add(this.textBox5_telepitesicim);
             this.Controls.Add(this.textBox4_szemelyiszam);
             this.Controls.Add(this.textBox3_anyjaszulneve);
-            this.Controls.Add(this.textBox2_szulideje);
             this.Controls.Add(this.maskedTextBox1_telefonszam);
             this.Controls.Add(this.listBox2_fizetesimod);
             this.Controls.Add(this.listBox1_internetcsomag);
@@ -379,7 +401,6 @@
         private System.Windows.Forms.ListBox listBox1_internetcsomag;
         private System.Windows.Forms.ListBox listBox2_fizetesimod;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1_telefonszam;
-        private System.Windows.Forms.TextBox textBox2_szulideje;
         private System.Windows.Forms.TextBox textBox3_anyjaszulneve;
         private System.Windows.Forms.TextBox textBox4_szemelyiszam;
         private System.Windows.Forms.TextBox textBox5_telepitesicim;
@@ -388,5 +409,7 @@
         private System.Windows.Forms.TextBox textBox8_megjegyzes;
         private System.Windows.Forms.Button button1_importcsv;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button button1_modositas;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1_szulido;
     }
 }

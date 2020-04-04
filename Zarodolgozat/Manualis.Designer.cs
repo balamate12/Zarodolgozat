@@ -263,6 +263,11 @@
             // listBox1_internetcsomag
             // 
             this.listBox1_internetcsomag.FormattingEnabled = true;
+            this.listBox1_internetcsomag.Items.AddRange(new object[] {
+            "8",
+            "15",
+            "30",
+            "60"});
             this.listBox1_internetcsomag.Location = new System.Drawing.Point(380, 291);
             this.listBox1_internetcsomag.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1_internetcsomag.Name = "listBox1_internetcsomag";
@@ -272,6 +277,10 @@
             // listBox2_fizetesimod
             // 
             this.listBox2_fizetesimod.FormattingEnabled = true;
+            this.listBox2_fizetesimod.Items.AddRange(new object[] {
+            "Csekk",
+            "Banki átutalás",
+            "Elektronikus számla"});
             this.listBox2_fizetesimod.Location = new System.Drawing.Point(380, 351);
             this.listBox2_fizetesimod.Margin = new System.Windows.Forms.Padding(2);
             this.listBox2_fizetesimod.Name = "listBox2_fizetesimod";

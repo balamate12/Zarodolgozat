@@ -20,18 +20,6 @@ namespace Zarodolgozat
 
         private void Manualis_Load(object sender, EventArgs e)
         {
-            listBox1_internetcsomag.Items.Add("8");
-            listBox1_internetcsomag.Items.Add("15");
-            listBox1_internetcsomag.Items.Add("30");
-            listBox1_internetcsomag.Items.Add("60");
-            listBox1_internetcsomag.SelectedItem = "8";
-
-
-
-            listBox2_fizetesimod.Items.Add("Csekk");
-            listBox2_fizetesimod.Items.Add("Banki átutalás");
-            listBox2_fizetesimod.Items.Add("Elektronikus számla");
-            listBox2_fizetesimod.SelectedItem = "Csekk";
 
         }
 
