@@ -161,32 +161,46 @@ namespace Zarodolgozat
             int darab = 0;
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             desktopPath += "\\mentes.csv";
-            using (StreamWriter bw = new StreamWriter(desktopPath))
+
+            try
             {
-                bw.Write(dataGridView1.Columns.Count);
-                bw.Write(dataGridView1.Rows.Count);
-                foreach (DataGridViewRow dgvR in dataGridView1.Rows)
+                using (StreamWriter bw = new StreamWriter(desktopPath))
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; ++j)
+                    bw.Write(dataGridView1.Columns.Count);
+                    bw.Write(dataGridView1.Rows.Count);
+                    foreach (DataGridViewRow dgvR in dataGridView1.Rows)
                     {
-                        darab++;
-                        object val = dgvR.Cells[j].Value;
-                        if (val == null)
+                        for (int j = 0; j < dataGridView1.Columns.Count; ++j)
                         {
-                            bw.Write("");
-                            bw.Write("");
+                            darab++;
+                            object val = dgvR.Cells[j].Value;
+                            if (val == null)
+                            {
+                                bw.Write("");
+                                bw.Write("");
+                            }
+                            else
+                            {
+
+                                bw.WriteLine(";");
+                                bw.Write(val.ToString());
+                            }
                         }
-                        else 
-                        {
-                           
-                            bw.WriteLine(";");
-                            bw.Write(val.ToString());
-                        }
+                        bw.WriteLine();
                     }
-                    bw.WriteLine();
+
+                    MessageBox.Show("Sikeres mentés az asztalra!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Sikertelen mentés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                throw;
+            }
+                
+        
+           
         }
     }
 }
