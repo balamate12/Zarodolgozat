@@ -156,21 +156,124 @@ namespace Zarodolgozat
 
                 string[] sor3 = lines[8].Split(':');
                 string anyjaszuletesineve = sor3[1];
+                nev = "";
+                for (int i = 0; i < anyjaszuletesineve.Length; i++)
+                {
+                    if (anyjaszuletesineve[0] != ' ')
+                    {
+                        nev += anyjaszuletesineve[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += anyjaszuletesineve[i];
+                    }
+                }
+
+                anyjaszuletesineve = nev;
+
+                nev = "";
 
                 string[] sor4 = lines[9].Split(':');
                 string szemelyiszama = sor4[1];
 
+
+                for (int i = 0; i < szemelyiszama.Length; i++)
+                {
+                    if (szemelyiszama[0] != ' ')
+                    {
+                        nev += szemelyiszama[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += szemelyiszama[i];
+                    }
+                }
+
+                szemelyiszama = nev;
+
+
+                nev = "";
+
                 string[] sor5 = lines[10].Split(':');
                 string telepitesicim = sor5[1];
+
+
+                for (int i = 0; i < telepitesicim.Length; i++)
+                {
+                    if (telepitesicim[0] != ' ')
+                    {
+                        nev += telepitesicim[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += telepitesicim[i];
+                    }
+                }
+
+                telepitesicim = nev;
+
+
+                nev = "";
 
                 string[] sor6 = lines[11].Split(':');
                 string postazasicim = sor6[1];
 
+                for (int i = 0; i < postazasicim.Length; i++)
+                {
+                    if (postazasicim[0] != ' ')
+                    {
+                        nev += postazasicim[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += postazasicim[i];
+                    }
+                }
+
+                postazasicim = nev;
+
+
+                nev = "";
+
                 string[] sor7 = lines[12].Split(':');
                 string telefonszam = sor7[1];
 
+                for (int i = 0; i < telefonszam.Length; i++)
+                {
+                    if (telefonszam[0] != ' ')
+                    {
+                        nev += telefonszam[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += telefonszam[i];
+                    }
+                }
+
+                telefonszam = nev;
+
+
+                nev = "";
+
                 string[] sor8 = lines[13].Split(':');
                 string email = sor8[1];
+
+                for (int i = 0; i < email.Length; i++)
+                {
+                    if (email[0] != ' ')
+                    {
+                        nev += email[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += email[i];
+                    }
+                }
+
+                email = nev;
+
+
+                nev = "";
 
                 string[] sor9 = lines[14].Split(':');
                 string intertnetcsomag = sor9[1];
@@ -178,10 +281,28 @@ namespace Zarodolgozat
                 string[] sor10 = lines[15].Split(':');
                 string fizetesimod = sor10[1];
 
+                for (int i = 0; i < fizetesimod.Length; i++)
+                {
+                    if (fizetesimod[0] != ' ')
+                    {
+                        nev += fizetesimod[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += fizetesimod[i];
+                    }
+                }
+
+                fizetesimod = nev;
+
+
+                nev = "";
+
                 string[] sor11 = lines[16].Split(':');
                 string megjegyzes = sor11[1];
 
-                
+                MessageBox.Show(anyjaszuletesineve);
+
                 Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
                 Program.sqlparancs.Connection = Program.conn;
 

@@ -21,12 +21,12 @@ namespace Zarodolgozat
 
         private void Plista_Load(object sender, EventArgs e)
         {
+            
 
             Program.conn.Open();
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
             Program.sqlparancs = Program.conn.CreateCommand();
             Program.sqlparancs.CommandText = "SELECT * FROM `users`";
-            MySqlDataReader sqldatareader = Program.sqlparancs.ExecuteReader();
             MyDA.SelectCommand = new MySqlCommand("SELECT elofizetoneve, internetcsomag, fizetesimod FROM `users`", Program.conn);
 
             Program.conn.Close();
@@ -42,12 +42,13 @@ namespace Zarodolgozat
             dataGridView1.DataSource = bSource;
             Program.conn.Close();
             DataSet ds = new DataSet();
-            ds.Clear();//clear before fill
+            ds.Clear();
 
-            MyDA.Fill(ds);  
+            MyDA.Fill(ds);
 
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
+
 
         }
 
@@ -78,59 +79,6 @@ namespace Zarodolgozat
             }
         }
 
- 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
-            Program.sqlparancs.Connection = Program.conn;
-
-            string searchValue = textBox1.Text;
-
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-
-                    if (row.Cells[0].Value.ToString().Equals(searchValue))
-                    {
-                       dataGridView1.ClearSelection();
-                        row.Cells[0].Selected = true;
-
-
-                        Program.conn.Open();
-                        string sql = "SELECT * FROM users WHERE elofizetoneve = '" + searchValue + "'";
-                        using (var cmd = new MySqlCommand(sql, Program.conn))
-                        {
-                            MySqlDataReader rdr = cmd.ExecuteReader();
-                            while (rdr.Read())
-                            {
-                                textBox2_eloneve.Text = rdr.GetString(1);
-                                textBox3_szulneve.Text = rdr.GetString(2);
-                                textBox4_szulhely.Text = rdr.GetString(3);
-                                dateTimePicker1_szulido.Text = rdr.GetString(4);
-                                textBox3_anyjaszulneve.Text = rdr.GetString(5);
-                                textBox4_szemelyiszam.Text = rdr.GetString(6);
-                                textBox5_telepitesicim.Text = rdr.GetString(7);
-                                textbox6_postazasicim.Text = rdr.GetString(8);
-                                maskedTextBox1_telefonszam.Text = rdr.GetString(9);
-                                textBox7_email.Text = rdr.GetString(10);
-                                listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
-                                listBox2_fizetesimod.SelectedItem = rdr.GetString(12);
-                                textBox8_megjegyzes.Text = rdr.GetString(13);
-
-                            }
-                        }
-                        Program.conn.Close();
-                        break;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                
-            }
-        }
 
 
 
@@ -184,46 +132,66 @@ namespace Zarodolgozat
 
         private void button1_modositas_Click(object sender, EventArgs e)
         {
-            int rowindex = dataGridView1.CurrentCell.RowIndex;
-            int columnindex = dataGridView1.CurrentCell.ColumnIndex;
+            try
+            {
+                int rowindex = dataGridView1.CurrentCell.RowIndex;
+                int columnindex = dataGridView1.CurrentCell.ColumnIndex;
 
-            string ertek = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
+                string ertek = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
 
-            string elofizetoneve = textBox2_eloneve.Text;
-            string szuletesineve = textBox3_szulneve.Text;
-            string szuletesihely = textBox4_szulhely.Text;
-            string szuletesiido = Convert.ToString(dateTimePicker1_szulido.Text);
-            string anyjaszuletesineve = textBox3_anyjaszulneve.Text;
-            string szemelyiszama = Convert.ToString(textBox4_szemelyiszam.Text);
-            string telepitesicim = Convert.ToString(textBox5_telepitesicim.Text);
-            string postazasicim = Convert.ToString(textbox6_postazasicim.Text);
-            string telefonszam = Convert.ToString(maskedTextBox1_telefonszam.Text);
-            string email = Convert.ToString(textBox7_email.Text);
-            string intertnetcsomag = Convert.ToString(listBox1_internetcsomag.SelectedItem.ToString());
-            string fizetesimod = Convert.ToString(listBox2_fizetesimod.SelectedItem.ToString());
-            string megjegyzes = Convert.ToString(textBox8_megjegyzes.Text);
-
-
-            Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
-            Program.sqlparancs.Connection = Program.conn;
+                string elofizetoneve = textBox2_eloneve.Text;
+                string szuletesineve = textBox3_szulneve.Text;
+                string szuletesihely = textBox4_szulhely.Text;
+                string szuletesiido = Convert.ToString(dateTimePicker1_szulido.Text);
+                string anyjaszuletesineve = textBox3_anyjaszulneve.Text;
+                string szemelyiszama = Convert.ToString(textBox4_szemelyiszam.Text);
+                string telepitesicim = Convert.ToString(textBox5_telepitesicim.Text);
+                string postazasicim = Convert.ToString(textbox6_postazasicim.Text);
+                string telefonszam = Convert.ToString(maskedTextBox1_telefonszam.Text);
+                string email = Convert.ToString(textBox7_email.Text);
+                string intertnetcsomag = Convert.ToString(listBox1_internetcsomag.SelectedItem.ToString());
+                string fizetesimod = Convert.ToString(listBox1_fizetesimod.SelectedItem.ToString());
+                string megjegyzes = Convert.ToString(textBox8_megjegyzes.Text);
 
 
-            Program.sqlparancs.CommandText = "UPDATE users SET elofizetoneve = @1, szuletesineve = @2, szuletesihely = @3 WHERE (elofizetoneve = '"+ertek+"')";
+                Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
+                Program.sqlparancs.Connection = Program.conn;
 
 
 
-            Program.sqlparancs.Parameters.AddWithValue("@1", elofizetoneve);
-            Program.sqlparancs.Parameters.AddWithValue("@2", textBox3_szulneve.Text);
-            Program.sqlparancs.Parameters.AddWithValue("@3", textBox4_szulhely.Text);
+                Program.sqlparancs.CommandText = "UPDATE `users` SET elofizetoneve = @1, szuletesineve = @2, szuletesihely = @3, szuletesiido = @4, anyjaszuletesineve = @5,  szemelyiszam = @6,  telepitesicim = @7, postazasicim = @8,  telefonszam = @9,  email = @10, internetcsomag = @11,  fizetesimod = @12,  megjegyzes = @13 WHERE (elofizetoneve = '" + ertek + "')";
 
-            Program.conn.Open();
 
-            Program.sqlparancs.ExecuteNonQuery();
+                Program.sqlparancs.Parameters.AddWithValue("@1", elofizetoneve);
+                Program.sqlparancs.Parameters.AddWithValue("@2", szuletesineve);
+                Program.sqlparancs.Parameters.AddWithValue("@3", szuletesihely);
+                Program.sqlparancs.Parameters.AddWithValue("@4", szuletesiido);
+                Program.sqlparancs.Parameters.AddWithValue("@5", anyjaszuletesineve);
+                Program.sqlparancs.Parameters.AddWithValue("@6", szemelyiszama);
+                Program.sqlparancs.Parameters.AddWithValue("@7", telepitesicim);
+                Program.sqlparancs.Parameters.AddWithValue("@8", postazasicim);
+                Program.sqlparancs.Parameters.AddWithValue("@9", telefonszam);
+                Program.sqlparancs.Parameters.AddWithValue("@10", email);
+                Program.sqlparancs.Parameters.AddWithValue("@11", intertnetcsomag);
+                Program.sqlparancs.Parameters.AddWithValue("@12", fizetesimod);
+                Program.sqlparancs.Parameters.AddWithValue("@13", megjegyzes);
 
-            Program.conn.Close();
+                Program.conn.Open();
 
+                Program.sqlparancs.ExecuteNonQuery();
+
+                Program.conn.Close();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nem történt módosítás!","információ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            
 
         }
+
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -252,13 +220,67 @@ namespace Zarodolgozat
                     maskedTextBox1_telefonszam.Text = rdr.GetString(9);
                     textBox7_email.Text = rdr.GetString(10);
                     listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
-                    listBox2_fizetesimod.SelectedItem = rdr.GetString(12);
+                    listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
                     textBox8_megjegyzes.Text = rdr.GetString(13);
 
                 }
+                
             }
             Program.conn.Close();
 
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
+            Program.sqlparancs.Connection = Program.conn;
+
+            string searchValue = textBox1.Text;
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+
+                    if (row.Cells[0].Value.ToString().Equals(searchValue))
+                    {
+                        dataGridView1.ClearSelection();
+                        row.Cells[0].Selected = true;
+
+
+                        Program.conn.Open();
+                        string sql = "SELECT * FROM users WHERE elofizetoneve = '" + searchValue + "'";
+                        using (var cmd = new MySqlCommand(sql, Program.conn))
+                        {
+                            MySqlDataReader rdr = cmd.ExecuteReader();
+                            while (rdr.Read())
+                            {
+                                textBox2_eloneve.Text = rdr.GetString(1);
+                                textBox3_szulneve.Text = rdr.GetString(2);
+                                textBox4_szulhely.Text = rdr.GetString(3);
+                                dateTimePicker1_szulido.Text = rdr.GetString(4);
+                                textBox3_anyjaszulneve.Text = rdr.GetString(5);
+                                textBox4_szemelyiszam.Text = rdr.GetString(6);
+                                textBox5_telepitesicim.Text = rdr.GetString(7);
+                                textbox6_postazasicim.Text = rdr.GetString(8);
+                                maskedTextBox1_telefonszam.Text = rdr.GetString(9);
+                                textBox7_email.Text = rdr.GetString(10);
+                                listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
+                                listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
+                                textBox8_megjegyzes.Text = rdr.GetString(13);
+
+
+                            }
+                        }
+                        Program.conn.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }
