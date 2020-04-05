@@ -184,7 +184,7 @@ namespace Zarodolgozat
             {
                 MessageBox.Show("Válasszon ki partnert!","információ",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-            
+            //datagrid.cells[email].value=uj ertek;
 
         }
 
