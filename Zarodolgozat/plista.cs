@@ -23,38 +23,14 @@ namespace Zarodolgozat
 
         private void Plista_Load(object sender, EventArgs e)
         {
-            
-
-            //Program.conn.Open();
-            //MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            //Program.sqlparancs = Program.conn.CreateCommand();
-            //Program.sqlparancs.CommandText = "SELECT * FROM `users`";
-            //MyDA.SelectCommand = new MySqlCommand("SELECT elofizetoneve, internetcsomag, fizetesimod FROM `users`", Program.conn);
-
-            //Program.conn.Close();
-            //Program.conn.Open();
-
-            //DataTable table = new DataTable();
-            //MyDA.Fill(table);
-
-
-            //BindingSource bSource = new BindingSource();
-            //bSource.DataSource = table;
-
-            //dataGridView1.DataSource = bSource;
-            //Program.conn.Close();
-            //DataSet ds = new DataSet();
-            //ds.Clear();
-
-            //MyDA.Fill(ds);
-
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
 
-            Tagok_Adattabla_beallitasai();
-            Tagok_Adattabla_Update();
+            Adattabla_beallitasai();
+            Adattabla_Update();
         }
-        private void Tagok_Adattabla_beallitasai()
+
+        private void Adattabla_beallitasai()
         {
  
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -77,7 +53,7 @@ namespace Zarodolgozat
             dataGridView1.Columns.Insert(0, column_elofizetoneve);
 
         }
-        private void Tagok_Adattabla_Update()
+        private void Adattabla_Update()
         {
             Program.conn.Open();
 
