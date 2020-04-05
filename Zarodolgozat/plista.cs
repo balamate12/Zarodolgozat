@@ -185,7 +185,7 @@ namespace Zarodolgozat
             }
             catch (Exception)
             {
-                MessageBox.Show("Nem történt módosítás!","információ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Válasszon ki partnert!","információ",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             
 
