@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace Zarodolgozat
 {
     public partial class plista : Form
     {
+
         public plista()
         {
             InitializeComponent();
@@ -52,7 +54,6 @@ namespace Zarodolgozat
 
         }
 
-
         private void Button1_kereses_Click_1(object sender, EventArgs e)
         {
             Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
@@ -78,10 +79,6 @@ namespace Zarodolgozat
                 MessageBox.Show("Nincs ilyen partner!!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
-
-
 
         private void button1_importcsv_Click(object sender, EventArgs e)
         {
@@ -191,8 +188,6 @@ namespace Zarodolgozat
 
         }
 
-
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.CurrentRow.Selected = true;
@@ -232,55 +227,86 @@ namespace Zarodolgozat
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
-            Program.sqlparancs.Connection = Program.conn;
+            //Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
+            //Program.sqlparancs.Connection = Program.conn;
+
+            //string searchValue = textBox1.Text;
+
+            //dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //try
+            //{
+            //    foreach (DataGridViewRow row in dataGridView1.Rows)
+            //    {
+
+            //        if (row.Cells[0].Value.ToString().Equals(searchValue))
+            //        {
+            //            dataGridView1.ClearSelection();
+            //            row.Cells[0].Selected = true;
+
+
+            //            Program.conn.Open();
+            //            string sql = "SELECT * FROM users WHERE elofizetoneve = '" + searchValue + "'";
+            //            using (var cmd = new MySqlCommand(sql, Program.conn))
+            //            {
+            //                MySqlDataReader rdr = cmd.ExecuteReader();
+            //                while (rdr.Read())
+            //                {
+            //                    textBox2_eloneve.Text = rdr.GetString(1);
+            //                    textBox3_szulneve.Text = rdr.GetString(2);
+            //                    textBox4_szulhely.Text = rdr.GetString(3);
+            //                    dateTimePicker1_szulido.Text = rdr.GetString(4);
+            //                    textBox3_anyjaszulneve.Text = rdr.GetString(5);
+            //                    textBox4_szemelyiszam.Text = rdr.GetString(6);
+            //                    textBox5_telepitesicim.Text = rdr.GetString(7);
+            //                    textbox6_postazasicim.Text = rdr.GetString(8);
+            //                    maskedTextBox1_telefonszam.Text = rdr.GetString(9);
+            //                    textBox7_email.Text = rdr.GetString(10);
+            //                    listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
+            //                    listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
+            //                    textBox8_megjegyzes.Text = rdr.GetString(13);
+
+
+            //                }
+            //            }
+            //            Program.conn.Close();
+            //        }
+            //    }
+            //}
+            //catch (Exception)
+            //{
+
+            //}
 
             string searchValue = textBox1.Text;
-
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
+            dataGridView1.ClearSelection();
+            if (searchValue.Length != 0)
             {
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                try
                 {
-
-                    if (row.Cells[0].Value.ToString().Equals(searchValue))
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        dataGridView1.ClearSelection();
-                        row.Cells[0].Selected = true;
-
-
-                        Program.conn.Open();
-                        string sql = "SELECT * FROM users WHERE elofizetoneve = '" + searchValue + "'";
-                        using (var cmd = new MySqlCommand(sql, Program.conn))
-                        {
-                            MySqlDataReader rdr = cmd.ExecuteReader();
-                            while (rdr.Read())
+                        string tesztNev = "";
+                        if (searchValue.Length <= row.Cells[0].Value.ToString().Length)
+                            for (int i = 0; i < searchValue.Length; i++)
                             {
-                                textBox2_eloneve.Text = rdr.GetString(1);
-                                textBox3_szulneve.Text = rdr.GetString(2);
-                                textBox4_szulhely.Text = rdr.GetString(3);
-                                dateTimePicker1_szulido.Text = rdr.GetString(4);
-                                textBox3_anyjaszulneve.Text = rdr.GetString(5);
-                                textBox4_szemelyiszam.Text = rdr.GetString(6);
-                                textBox5_telepitesicim.Text = rdr.GetString(7);
-                                textbox6_postazasicim.Text = rdr.GetString(8);
-                                maskedTextBox1_telefonszam.Text = rdr.GetString(9);
-                                textBox7_email.Text = rdr.GetString(10);
-                                listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
-                                listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
-                                textBox8_megjegyzes.Text = rdr.GetString(13);
-
-
+                                tesztNev += row.Cells[0].Value.ToString()[i];
+                                
                             }
+                        if (tesztNev == searchValue)
+                        {
+                            dataGridView1.Rows[row.Index].Selected = true;
+
                         }
-                        Program.conn.Close();
                     }
                 }
+                catch
+                {
+                    return;
+                }
             }
-            catch (Exception)
-            {
 
-            }
         }
+
     }
 }
