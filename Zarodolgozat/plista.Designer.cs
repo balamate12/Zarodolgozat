@@ -61,6 +61,7 @@
             this.dateTimePicker1_szulido = new System.Windows.Forms.DateTimePicker();
             this.listBox1_fizetesimod = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.button1_bezaras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,7 +297,7 @@
             // 
             // button1_importcsv
             // 
-            this.button1_importcsv.Location = new System.Drawing.Point(1042, 263);
+            this.button1_importcsv.Location = new System.Drawing.Point(1042, 77);
             this.button1_importcsv.Name = "button1_importcsv";
             this.button1_importcsv.Size = new System.Drawing.Size(75, 23);
             this.button1_importcsv.TabIndex = 30;
@@ -306,7 +307,7 @@
             // 
             // button1_modositas
             // 
-            this.button1_modositas.Location = new System.Drawing.Point(1042, 328);
+            this.button1_modositas.Location = new System.Drawing.Point(1042, 177);
             this.button1_modositas.Name = "button1_modositas";
             this.button1_modositas.Size = new System.Drawing.Size(75, 23);
             this.button1_modositas.TabIndex = 31;
@@ -343,11 +344,22 @@
             this.label14.TabIndex = 35;
             this.label14.Text = "Keresés:";
             // 
+            // button1_bezaras
+            // 
+            this.button1_bezaras.Location = new System.Drawing.Point(1042, 328);
+            this.button1_bezaras.Name = "button1_bezaras";
+            this.button1_bezaras.Size = new System.Drawing.Size(75, 23);
+            this.button1_bezaras.TabIndex = 36;
+            this.button1_bezaras.Text = "Bezárás";
+            this.button1_bezaras.UseVisualStyleBackColor = true;
+            this.button1_bezaras.Click += new System.EventHandler(this.button1_bezaras_Click);
+            // 
             // plista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 394);
+            this.Controls.Add(this.button1_bezaras);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.listBox1_fizetesimod);
             this.Controls.Add(this.dateTimePicker1_szulido);
@@ -425,5 +437,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1_szulido;
         private System.Windows.Forms.ListBox listBox1_fizetesimod;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button1_bezaras;
     }
 }

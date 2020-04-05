@@ -72,5 +72,10 @@ namespace Zarodolgozat
 
             
         }
+
+        private void button1_bezaras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

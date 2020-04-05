@@ -25,33 +25,76 @@ namespace Zarodolgozat
         {
             
 
-            Program.conn.Open();
-            MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            Program.sqlparancs = Program.conn.CreateCommand();
-            Program.sqlparancs.CommandText = "SELECT * FROM `users`";
-            MyDA.SelectCommand = new MySqlCommand("SELECT elofizetoneve, internetcsomag, fizetesimod FROM `users`", Program.conn);
+            //Program.conn.Open();
+            //MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            //Program.sqlparancs = Program.conn.CreateCommand();
+            //Program.sqlparancs.CommandText = "SELECT * FROM `users`";
+            //MyDA.SelectCommand = new MySqlCommand("SELECT elofizetoneve, internetcsomag, fizetesimod FROM `users`", Program.conn);
 
-            Program.conn.Close();
-            Program.conn.Open();
+            //Program.conn.Close();
+            //Program.conn.Open();
 
-            DataTable table = new DataTable();
-            MyDA.Fill(table);
+            //DataTable table = new DataTable();
+            //MyDA.Fill(table);
 
 
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
+            //BindingSource bSource = new BindingSource();
+            //bSource.DataSource = table;
 
-            dataGridView1.DataSource = bSource;
-            Program.conn.Close();
-            DataSet ds = new DataSet();
-            ds.Clear();
+            //dataGridView1.DataSource = bSource;
+            //Program.conn.Close();
+            //DataSet ds = new DataSet();
+            //ds.Clear();
 
-            MyDA.Fill(ds);
+            //MyDA.Fill(ds);
 
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
 
+            Tagok_Adattabla_beallitasai();
+            Tagok_Adattabla_Update();
+        }
+        private void Tagok_Adattabla_beallitasai()
+        {
+ 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView1.MultiSelect = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+
+
+            DataGridViewColumn column_elofizetoneve = new DataGridViewColumn();
+            {
+                column_elofizetoneve.HeaderText = "Név";
+                column_elofizetoneve.Name = "elofizetoneve";
+                column_elofizetoneve.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(0, column_elofizetoneve);
+
+        }
+        private void Tagok_Adattabla_Update()
+        {
+            Program.conn.Open();
+
+            Program.sqlparancs.CommandText = "SELECT `elofizetoneve` FROM `users`;";
+            using (MySqlDataReader dr = Program.sqlparancs.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    int uj_sor_index = dataGridView1.Rows.Add();
+
+                    DataGridViewRow uj_sor = dataGridView1.Rows[uj_sor_index];
+                    uj_sor.Cells["elofizetoneve"].Value = dr.GetString("elofizetoneve");
+
+
+                }
+            }
+            Program.conn.Close();
         }
 
         private void Button1_kereses_Click_1(object sender, EventArgs e)
@@ -179,12 +222,18 @@ namespace Zarodolgozat
 
                 Program.conn.Close();
 
+                MessageBox.Show("Sikeres módosítás", "információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+
             }
             catch (Exception)
             {
                 MessageBox.Show("Válasszon ki partnert!","információ",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             //datagrid.cells[email].value=uj ertek;
+
+
 
         }
 
@@ -227,56 +276,6 @@ namespace Zarodolgozat
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            //Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
-            //Program.sqlparancs.Connection = Program.conn;
-
-            //string searchValue = textBox1.Text;
-
-            //dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //try
-            //{
-            //    foreach (DataGridViewRow row in dataGridView1.Rows)
-            //    {
-
-            //        if (row.Cells[0].Value.ToString().Equals(searchValue))
-            //        {
-            //            dataGridView1.ClearSelection();
-            //            row.Cells[0].Selected = true;
-
-
-            //            Program.conn.Open();
-            //            string sql = "SELECT * FROM users WHERE elofizetoneve = '" + searchValue + "'";
-            //            using (var cmd = new MySqlCommand(sql, Program.conn))
-            //            {
-            //                MySqlDataReader rdr = cmd.ExecuteReader();
-            //                while (rdr.Read())
-            //                {
-            //                    textBox2_eloneve.Text = rdr.GetString(1);
-            //                    textBox3_szulneve.Text = rdr.GetString(2);
-            //                    textBox4_szulhely.Text = rdr.GetString(3);
-            //                    dateTimePicker1_szulido.Text = rdr.GetString(4);
-            //                    textBox3_anyjaszulneve.Text = rdr.GetString(5);
-            //                    textBox4_szemelyiszam.Text = rdr.GetString(6);
-            //                    textBox5_telepitesicim.Text = rdr.GetString(7);
-            //                    textbox6_postazasicim.Text = rdr.GetString(8);
-            //                    maskedTextBox1_telefonszam.Text = rdr.GetString(9);
-            //                    textBox7_email.Text = rdr.GetString(10);
-            //                    listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
-            //                    listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
-            //                    textBox8_megjegyzes.Text = rdr.GetString(13);
-
-
-            //                }
-            //            }
-            //            Program.conn.Close();
-            //        }
-            //    }
-            //}
-            //catch (Exception)
-            //{
-
-            //}
-
             string searchValue = textBox1.Text;
             dataGridView1.ClearSelection();
             if (searchValue.Length != 0)
@@ -308,5 +307,9 @@ namespace Zarodolgozat
 
         }
 
+        private void button1_bezaras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

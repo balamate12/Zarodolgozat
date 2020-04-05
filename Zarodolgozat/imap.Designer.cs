@@ -153,6 +153,7 @@
             this.Controls.Add(this.label2_port);
             this.Controls.Add(this.label1_imap);
             this.Name = "imap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imap";
             this.Load += new System.EventHandler(this.Imap_Load);
             this.ResumeLayout(false);

@@ -55,6 +55,7 @@
             this.textBox6_megjegyzes = new System.Windows.Forms.TextBox();
             this.button1_kuld = new System.Windows.Forms.Button();
             this.maskedTextBox2_telefonszam = new System.Windows.Forms.MaskedTextBox();
+            this.button1_bezaras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1_elofizetoneve
@@ -298,10 +299,10 @@
             // 
             // button1_kuld
             // 
-            this.button1_kuld.Location = new System.Drawing.Point(316, 591);
+            this.button1_kuld.Location = new System.Drawing.Point(131, 593);
             this.button1_kuld.Margin = new System.Windows.Forms.Padding(2);
             this.button1_kuld.Name = "button1_kuld";
-            this.button1_kuld.Size = new System.Drawing.Size(56, 19);
+            this.button1_kuld.Size = new System.Drawing.Size(75, 23);
             this.button1_kuld.TabIndex = 26;
             this.button1_kuld.Text = "Küldés";
             this.button1_kuld.UseVisualStyleBackColor = true;
@@ -316,11 +317,22 @@
             this.maskedTextBox2_telefonszam.Size = new System.Drawing.Size(288, 20);
             this.maskedTextBox2_telefonszam.TabIndex = 21;
             // 
+            // button1_bezaras
+            // 
+            this.button1_bezaras.Location = new System.Drawing.Point(495, 593);
+            this.button1_bezaras.Name = "button1_bezaras";
+            this.button1_bezaras.Size = new System.Drawing.Size(75, 23);
+            this.button1_bezaras.TabIndex = 27;
+            this.button1_bezaras.Text = "Bezárás";
+            this.button1_bezaras.UseVisualStyleBackColor = true;
+            this.button1_bezaras.Click += new System.EventHandler(this.button1_bezaras_Click);
+            // 
             // Manualis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 646);
+            this.Controls.Add(this.button1_bezaras);
             this.Controls.Add(this.maskedTextBox2_telefonszam);
             this.Controls.Add(this.button1_kuld);
             this.Controls.Add(this.textBox6_megjegyzes);
@@ -387,5 +399,6 @@
         private System.Windows.Forms.TextBox textBox6_megjegyzes;
         private System.Windows.Forms.Button button1_kuld;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2_telefonszam;
+        private System.Windows.Forms.Button button1_bezaras;
     }
 }
