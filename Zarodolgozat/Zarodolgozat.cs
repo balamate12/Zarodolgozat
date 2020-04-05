@@ -65,6 +65,8 @@ namespace Zarodolgozat
 
                     textBox1.Text = "";
                     textBox2.Text = "";
+
+                    
                 }
                 else
                     {

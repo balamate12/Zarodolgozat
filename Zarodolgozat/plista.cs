@@ -41,8 +41,16 @@ namespace Zarodolgozat
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView1.MultiSelect = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoResizeRows();
 
-
+            DataGridViewColumn column_id = new DataGridViewColumn();
+            {
+                column_id.HeaderText = "ID";
+                column_id.Name = "id";
+                column_id.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(0, column_id);
 
             DataGridViewColumn column_elofizetoneve = new DataGridViewColumn();
             {
@@ -50,14 +58,14 @@ namespace Zarodolgozat
                 column_elofizetoneve.Name = "elofizetoneve";
                 column_elofizetoneve.CellTemplate = new DataGridViewTextBoxCell();
             }
-            dataGridView1.Columns.Insert(0, column_elofizetoneve);
+            dataGridView1.Columns.Insert(1, column_elofizetoneve);
 
         }
         private void Adattabla_Update()
         {
             Program.conn.Open();
 
-            Program.sqlparancs.CommandText = "SELECT `elofizetoneve` FROM `users`;";
+            Program.sqlparancs.CommandText = "SELECT `id`,`elofizetoneve` FROM `users`;";
             using (MySqlDataReader dr = Program.sqlparancs.ExecuteReader())
             {
                 while (dr.Read())
@@ -65,8 +73,8 @@ namespace Zarodolgozat
                     int uj_sor_index = dataGridView1.Rows.Add();
 
                     DataGridViewRow uj_sor = dataGridView1.Rows[uj_sor_index];
+                    uj_sor.Cells["id"].Value = dr.GetString("id");
                     uj_sor.Cells["elofizetoneve"].Value = dr.GetString("elofizetoneve");
-
 
                 }
             }
@@ -175,7 +183,7 @@ namespace Zarodolgozat
 
 
 
-                Program.sqlparancs.CommandText = "UPDATE `users` SET elofizetoneve = @1, szuletesineve = @2, szuletesihely = @3, szuletesiido = @4, anyjaszuletesineve = @5,  szemelyiszam = @6,  telepitesicim = @7, postazasicim = @8,  telefonszam = @9,  email = @10, internetcsomag = @11,  fizetesimod = @12,  megjegyzes = @13 WHERE (elofizetoneve = '" + ertek + "')";
+                Program.sqlparancs.CommandText = "UPDATE `users` SET elofizetoneve = @1, szuletesineve = @2, szuletesihely = @3, szuletesiido = @4, anyjaszuletesineve = @5,  szemelyiszam = @6,  telepitesicim = @7, postazasicim = @8,  telefonszam = @9,  email = @10, internetcsomag = @11,  fizetesimod = @12,  megjegyzes = @13 WHERE (id = '" + ertek + "')"; // elofizetoneve
 
 
                 Program.sqlparancs.Parameters.AddWithValue("@1", elofizetoneve);
@@ -223,7 +231,7 @@ namespace Zarodolgozat
             string ertek = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
 
             Program.conn.Open();
-            string sql = "SELECT * FROM users WHERE elofizetoneve = '" + ertek + "'";
+            string sql = "SELECT * FROM users WHERE id = '" + ertek + "'"; // elofizetoneve
             using (var cmd = new MySqlCommand(sql, Program.conn))
             {
                 MySqlDataReader rdr = cmd.ExecuteReader();
