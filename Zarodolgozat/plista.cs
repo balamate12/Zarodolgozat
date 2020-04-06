@@ -223,38 +223,47 @@ namespace Zarodolgozat
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.CurrentRow.Selected = true;
-
-            int rowindex = dataGridView1.CurrentCell.RowIndex;
-            int columnindex = dataGridView1.CurrentCell.ColumnIndex;
-
-            string ertek = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
-
-            Program.conn.Open();
-            string sql = "SELECT * FROM users WHERE id = '" + ertek + "'"; // elofizetoneve
-            using (var cmd = new MySqlCommand(sql, Program.conn))
+            try
             {
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    textBox2_eloneve.Text = rdr.GetString(1);
-                    textBox3_szulneve.Text = rdr.GetString(2);
-                    textBox4_szulhely.Text = rdr.GetString(3);
-                    dateTimePicker1_szulido.Text = rdr.GetString(4);
-                    textBox3_anyjaszulneve.Text = rdr.GetString(5);
-                    textBox4_szemelyiszam.Text = rdr.GetString(6);
-                    textBox5_telepitesicim.Text = rdr.GetString(7);
-                    textbox6_postazasicim.Text = rdr.GetString(8);
-                    maskedTextBox1_telefonszam.Text = rdr.GetString(9);
-                    textBox7_email.Text = rdr.GetString(10);
-                    listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
-                    listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
-                    textBox8_megjegyzes.Text = rdr.GetString(13);
 
+                dataGridView1.CurrentRow.Selected = true;
+
+                int rowindex = dataGridView1.CurrentCell.RowIndex;
+                int columnindex = dataGridView1.CurrentCell.ColumnIndex;
+
+                string ertek = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
+
+                Program.conn.Open();
+                string sql = "SELECT * FROM users WHERE id = '" + ertek + "'"; // elofizetoneve
+                using (var cmd = new MySqlCommand(sql, Program.conn))
+                {
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        textBox2_eloneve.Text = rdr.GetString(1);
+                        textBox3_szulneve.Text = rdr.GetString(2);
+                        textBox4_szulhely.Text = rdr.GetString(3);
+                        dateTimePicker1_szulido.Text = rdr.GetString(4);
+                        textBox3_anyjaszulneve.Text = rdr.GetString(5);
+                        textBox4_szemelyiszam.Text = rdr.GetString(6);
+                        textBox5_telepitesicim.Text = rdr.GetString(7);
+                        textbox6_postazasicim.Text = rdr.GetString(8);
+                        maskedTextBox1_telefonszam.Text = rdr.GetString(9);
+                        textBox7_email.Text = rdr.GetString(10);
+                        listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
+                        listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
+                        textBox8_megjegyzes.Text = rdr.GetString(13);
+
+                    }
+                    Program.conn.Close();
                 }
-                
             }
-            Program.conn.Close();
+            catch (Exception)
+            {
+                MessageBox.Show("Nem partner lett kijelölve!");
+
+            }
+            
 
         }
 
@@ -270,10 +279,10 @@ namespace Zarodolgozat
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         string tesztNev = "";
-                        if (searchValue.Length <= row.Cells[0].Value.ToString().Length)
+                        if (searchValue.Length <= row.Cells[1].Value.ToString().Length)
                             for (int i = 0; i < searchValue.Length; i++)
                             {
-                                tesztNev += row.Cells[0].Value.ToString()[i];
+                                tesztNev += row.Cells[1].Value.ToString()[i];
                                 
                             }
                         if (tesztNev == searchValue)
