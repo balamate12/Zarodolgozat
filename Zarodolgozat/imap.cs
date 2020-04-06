@@ -301,8 +301,6 @@ namespace Zarodolgozat
                 string[] sor11 = lines[16].Split(':');
                 string megjegyzes = sor11[1];
 
-                MessageBox.Show(anyjaszuletesineve);
-
                 Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
                 Program.sqlparancs.Connection = Program.conn;
 
