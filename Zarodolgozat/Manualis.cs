@@ -26,6 +26,13 @@ namespace Zarodolgozat
 
         private void Button1_kuld_Click(object sender, EventArgs e)
         {
+            if (!this.textBox5_email.Text.Contains('@') || !this.textBox5_email.Text.Contains('.'))
+            {
+                MessageBox.Show("Kérem adjon meg egy helyes email címet!", "Hibaüzent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
             string elofizetoneve = textBox1_elofizetoneve.Text;
             string szuletesineve = textBox1_szuletesineve.Text;
             string szuletesihely = textBox1_szuletesihelye.Text;
@@ -40,37 +47,41 @@ namespace Zarodolgozat
             string fizetesimod = Convert.ToString(listBox2_fizetesimod.SelectedItem.ToString());
             string megjegyzes = Convert.ToString(textBox6_megjegyzes.Text);
 
-            Program.conn.Open();
-            Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
-            Program.sqlparancs.Connection = Program.conn;
 
 
-            Program.sqlparancs.CommandText = "INSERT INTO `users` (`id`, `elofizetoneve`, `szuletesineve`, `szuletesihely`, `szuletesiido`, `anyjaszuletesineve`, `szemelyiszam`, `telepitesicim`, `postazasicim`, `telefonszam`, `email`, `internetcsomag`, `fizetesimod`, `megjegyzes`) VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-            Program.sqlparancs.Parameters.Add("elofizetoneve", MySqlDbType.VarChar).Value = elofizetoneve;
-            Program.sqlparancs.Parameters.Add("szuletesineve", MySqlDbType.VarChar).Value = szuletesineve;
-            Program.sqlparancs.Parameters.Add("szuletesihely", MySqlDbType.VarChar).Value = szuletesihely;
-            Program.sqlparancs.Parameters.Add("szuletesiido", MySqlDbType.VarChar).Value = szuletesiido;
-            Program.sqlparancs.Parameters.Add("anyjaszuletesineve", MySqlDbType.VarChar).Value = anyjaszuletesineve;
-            Program.sqlparancs.Parameters.Add("szemelyiszam", MySqlDbType.VarChar).Value = szemelyiszama;
-            Program.sqlparancs.Parameters.Add("telepitesicim", MySqlDbType.VarChar).Value = telepitesicim;
-            Program.sqlparancs.Parameters.Add("postazasicim", MySqlDbType.VarChar).Value = postazasicim;
-            Program.sqlparancs.Parameters.Add("telefonszam", MySqlDbType.VarChar).Value = telefonszam;
-            Program.sqlparancs.Parameters.Add("email", MySqlDbType.VarChar).Value = email;
-            Program.sqlparancs.Parameters.Add("internetcsomag", MySqlDbType.String).Value = intertnetcsomag;
-            Program.sqlparancs.Parameters.Add("fizetesimod", MySqlDbType.String).Value = fizetesimod;
-            Program.sqlparancs.Parameters.Add("megjegyzes", MySqlDbType.VarChar).Value = megjegyzes;
-            Program.sqlparancs.ExecuteNonQuery();
-            Program.conn.Close();
 
 
-            if (!this.textBox5_email.Text.Contains('@') || !this.textBox5_email.Text.Contains('.'))
-            {
-                MessageBox.Show("Kérem adjon meg egy helyes email címet!", "Hibaüzent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Program.conn.Open();
+                Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
+                Program.sqlparancs.Connection = Program.conn;
+
+
+                Program.sqlparancs.CommandText = "INSERT INTO `users` (`id`, `elofizetoneve`, `szuletesineve`, `szuletesihely`, `szuletesiido`, `anyjaszuletesineve`, `szemelyiszam`, `telepitesicim`, `postazasicim`, `telefonszam`, `email`, `internetcsomag`, `fizetesimod`, `megjegyzes`) VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                Program.sqlparancs.Parameters.Add("elofizetoneve", MySqlDbType.VarChar).Value = elofizetoneve;
+                Program.sqlparancs.Parameters.Add("szuletesineve", MySqlDbType.VarChar).Value = szuletesineve;
+                Program.sqlparancs.Parameters.Add("szuletesihely", MySqlDbType.VarChar).Value = szuletesihely;
+                Program.sqlparancs.Parameters.Add("szuletesiido", MySqlDbType.VarChar).Value = szuletesiido;
+                Program.sqlparancs.Parameters.Add("anyjaszuletesineve", MySqlDbType.VarChar).Value = anyjaszuletesineve;
+                Program.sqlparancs.Parameters.Add("szemelyiszam", MySqlDbType.VarChar).Value = szemelyiszama;
+                Program.sqlparancs.Parameters.Add("telepitesicim", MySqlDbType.VarChar).Value = telepitesicim;
+                Program.sqlparancs.Parameters.Add("postazasicim", MySqlDbType.VarChar).Value = postazasicim;
+                Program.sqlparancs.Parameters.Add("telefonszam", MySqlDbType.VarChar).Value = telefonszam;
+                Program.sqlparancs.Parameters.Add("email", MySqlDbType.VarChar).Value = email;
+                Program.sqlparancs.Parameters.Add("internetcsomag", MySqlDbType.String).Value = intertnetcsomag;
+                Program.sqlparancs.Parameters.Add("fizetesimod", MySqlDbType.String).Value = fizetesimod;
+                Program.sqlparancs.Parameters.Add("megjegyzes", MySqlDbType.VarChar).Value = megjegyzes;
+                Program.sqlparancs.ExecuteNonQuery();
+                Program.conn.Close();
             }
-            else
-                this.Close();
+            catch (Exception)
+            {
+                MessageBox.Show("Sikertelen feltöltés!", "Hibaüzent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            
+
+
+
+
         }
 
         private void button1_bezaras_Click(object sender, EventArgs e)

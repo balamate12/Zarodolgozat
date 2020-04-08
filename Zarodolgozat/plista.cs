@@ -60,12 +60,100 @@ namespace Zarodolgozat
             }
             dataGridView1.Columns.Insert(1, column_elofizetoneve);
 
+            DataGridViewColumn column_szuletesihely = new DataGridViewColumn();
+            {
+                column_szuletesihely.HeaderText = "Születési hely";
+                column_szuletesihely.Name = "szuletesihely";
+                column_szuletesihely.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(2, column_szuletesihely);
+
+            DataGridViewColumn column_szuletesiido = new DataGridViewColumn();
+            {
+                column_szuletesiido.HeaderText = "Születési idő";
+                column_szuletesiido.Name = "szuletesiido";
+                column_szuletesiido.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(3, column_szuletesiido);
+
+            DataGridViewColumn column_anyjaszuletesineve = new DataGridViewColumn();
+            {
+                column_anyjaszuletesineve.HeaderText = "Anyja születési neve";
+                column_anyjaszuletesineve.Name = "anyjaszuletesineve";
+                column_anyjaszuletesineve.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(4, column_anyjaszuletesineve);
+
+            DataGridViewColumn column_szemelyiszam = new DataGridViewColumn();
+            {
+                column_szemelyiszam.HeaderText = "Személyi szám";
+                column_szemelyiszam.Name = "szemelyiszam";
+                column_szemelyiszam.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(5, column_szemelyiszam);
+
+            DataGridViewColumn column_telepitesicim = new DataGridViewColumn();
+            {
+                column_telepitesicim.HeaderText = "Telepítési cím";
+                column_telepitesicim.Name = "telepitesicim";
+                column_telepitesicim.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(6, column_telepitesicim);
+
+            DataGridViewColumn column_postazasicim = new DataGridViewColumn();
+            {
+                column_postazasicim.HeaderText = "Postázási cím";
+                column_postazasicim.Name = "postazasicim";
+                column_postazasicim.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(7, column_postazasicim);
+
+            DataGridViewColumn column_telefonszam = new DataGridViewColumn();
+            {
+                column_telefonszam.HeaderText = "Telefonszám";
+                column_telefonszam.Name = "telefonszam";
+                column_telefonszam.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(8, column_telefonszam);
+
+            DataGridViewColumn column_email = new DataGridViewColumn();
+            {
+                column_email.HeaderText = "Email";
+                column_email.Name = "email";
+                column_email.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(9, column_email);
+
+            DataGridViewColumn column_internetcsomag = new DataGridViewColumn();
+            {
+                column_internetcsomag.HeaderText = "Internetcsomag";
+                column_internetcsomag.Name = "internetcsomag";
+                column_internetcsomag.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(10, column_internetcsomag);
+
+            DataGridViewColumn column_fizetesimod = new DataGridViewColumn();
+            {
+                column_fizetesimod.HeaderText = "Fizetési mód";
+                column_fizetesimod.Name = "fizetesimod";
+                column_fizetesimod.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(11, column_fizetesimod);
+
+            DataGridViewColumn column_megjegyzes = new DataGridViewColumn();
+            {
+                column_megjegyzes.HeaderText = "Megjegyzés";
+                column_megjegyzes.Name = "megjegyzes";
+                column_megjegyzes.CellTemplate = new DataGridViewTextBoxCell();
+            }
+            dataGridView1.Columns.Insert(12, column_megjegyzes);
         }
+
         private void Adattabla_Update()
         {
             Program.conn.Open();
 
-            Program.sqlparancs.CommandText = "SELECT `id`,`elofizetoneve` FROM `users`;";
+            Program.sqlparancs.CommandText = "SELECT `id`,`elofizetoneve`,`szuletesihely`,`szuletesiido`,`anyjaszuletesineve`,`szemelyiszam`,`telepitesicim`,`postazasicim`,`telefonszam`,`email`,`internetcsomag`,`fizetesimod`,`megjegyzes` FROM `users`;";
             using (MySqlDataReader dr = Program.sqlparancs.ExecuteReader())
             {
                 while (dr.Read())
@@ -75,6 +163,17 @@ namespace Zarodolgozat
                     DataGridViewRow uj_sor = dataGridView1.Rows[uj_sor_index];
                     uj_sor.Cells["id"].Value = dr.GetString("id");
                     uj_sor.Cells["elofizetoneve"].Value = dr.GetString("elofizetoneve");
+                    uj_sor.Cells["szuletesihely"].Value = dr.GetString("szuletesihely");
+                    uj_sor.Cells["szuletesiido"].Value = dr.GetString("szuletesiido");
+                    uj_sor.Cells["anyjaszuletesineve"].Value = dr.GetString("anyjaszuletesineve");
+                    uj_sor.Cells["szemelyiszam"].Value = dr.GetString("szemelyiszam");
+                    uj_sor.Cells["telepitesicim"].Value = dr.GetString("telepitesicim");
+                    uj_sor.Cells["postazasicim"].Value = dr.GetString("postazasicim");
+                    uj_sor.Cells["telefonszam"].Value = dr.GetString("telefonszam");
+                    uj_sor.Cells["email"].Value = dr.GetString("email");
+                    uj_sor.Cells["internetcsomag"].Value = dr.GetString("internetcsomag");
+                    uj_sor.Cells["fizetesimod"].Value = dr.GetString("fizetesimod");
+                    uj_sor.Cells["megjegyzes"].Value = dr.GetString("megjegyzes");
 
                 }
             }
@@ -110,12 +209,11 @@ namespace Zarodolgozat
         private void button1_importcsv_Click(object sender, EventArgs e)
         {
             int darab = 0;
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) ;
             desktopPath += "\\mentes.csv";
-
             try
             {
-                using (StreamWriter bw = new StreamWriter(desktopPath))
+                using (StreamWriter bw = new StreamWriter(desktopPath, false,Encoding.UTF8))
                 {
                     bw.Write(dataGridView1.Columns.Count);
                     bw.Write(dataGridView1.Rows.Count);
@@ -182,7 +280,6 @@ namespace Zarodolgozat
                 Program.sqlparancs.Connection = Program.conn;
 
 
-
                 Program.sqlparancs.CommandText = "UPDATE `users` SET elofizetoneve = @1, szuletesineve = @2, szuletesihely = @3, szuletesiido = @4, anyjaszuletesineve = @5,  szemelyiszam = @6,  telepitesicim = @7, postazasicim = @8,  telefonszam = @9,  email = @10, internetcsomag = @11,  fizetesimod = @12,  megjegyzes = @13 WHERE (id = '" + ertek + "')"; // elofizetoneve
 
 
@@ -208,16 +305,15 @@ namespace Zarodolgozat
 
                 MessageBox.Show("Sikeres módosítás", "információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.Close();
 
             }
             catch (Exception)
             {
                 MessageBox.Show("Válasszon ki partnert!","információ",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-            //datagrid.cells[email].value=uj ertek;
 
-
+            dataGridView1.Rows.Clear();
+            Adattabla_Update();
 
         }
 
@@ -303,6 +399,33 @@ namespace Zarodolgozat
         private void button1_bezaras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Button1_torles_Click(object sender, EventArgs e)
+        {
+            dataGridView1.CurrentRow.Selected = true;
+
+            int rowindex = dataGridView1.CurrentCell.RowIndex;
+            int columnindex = dataGridView1.CurrentCell.ColumnIndex;
+
+            string ertek = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
+            try
+            {
+                Program.conn.Open();
+                Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
+                Program.sqlparancs.Connection = Program.conn;
+                Program.sqlparancs.CommandText = "DELETE FROM `users` WHERE id= '" + ertek + "'";
+                Program.sqlparancs.ExecuteNonQuery();
+                MessageBox.Show("Sikeres eltávolítás!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            Program.conn.Close();
+
+            dataGridView1.Rows.Clear();
+            Adattabla_Update();
         }
     }
 }

@@ -44,51 +44,13 @@ namespace Zarodolgozat
         }
 
         private void button1_belepes_Click(object sender, EventArgs e)
-        { 
-
-                Program.conn.Open();
-
-                Program.sqlparancs.CommandText = "SELECT felhasznalonev, jelszo FROM login";
-
-            MySqlDataReader rdr = Program.sqlparancs.ExecuteReader();
-
-            while (rdr.Read())
-                {
-                    if (textBox1.Text == (rdr["felhasznalonev"].ToString()) && textBox2.Text == (rdr["jelszo"].ToString()))
-                    {
-                    groupBox1.Visible = false;
-
-                    button1_imap.Visible = true;
-                    button1_manualis.Visible = true;
-                    button1_partnerlista.Visible = true;
-                    button1_kilepes.Visible = true;
-
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-
-                    
-                }
-                else
-                    {
-
-                        MessageBox.Show("Helytelen felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    }
-                }
-
-            Program.conn.Close();
-
-
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Convert.ToInt32(e.KeyChar) == 13)
+            bool irany = false;
+            try
             {
-                e.Handled = true;
-
                 Program.conn.Open();
 
-                Program.sqlparancs.CommandText = "SELECT felhasznalonev, jelszo FROM login";
+                Program.sqlparancs.CommandText = "SELECT felhasznalonev, jelszo FROM login ";
 
                 MySqlDataReader rdr = Program.sqlparancs.ExecuteReader();
 
@@ -103,17 +65,88 @@ namespace Zarodolgozat
                         button1_partnerlista.Visible = true;
                         button1_kilepes.Visible = true;
 
-                        textBox1.Text = "";
-                        textBox2.Text = "";
+                        if (textBox1.Text == "admin")
+                        {
+                            button1_felhaszhozzaad.Visible = true;
+                        }
+                        else
+                        {
+                            button1_felhaszhozzaad.Visible = false;
+                        }
                     }
-                    else
+                    
+                }
+                if (irany == false)
+                {
+                    MessageBox.Show("Rossz felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                Program.conn.Close();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            
+
+
+        }
+
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool irany = false;
+            try
+            {
+                if (Convert.ToInt32(e.KeyChar) == 13)
+                {
+                    e.Handled = true;
+
+                    Program.conn.Open();
+
+                    Program.sqlparancs.CommandText = "SELECT felhasznalonev, jelszo FROM login";
+
+                    MySqlDataReader rdr = Program.sqlparancs.ExecuteReader();
+                    while (rdr.Read())
+                    {
+
+                        if (textBox1.Text == (rdr["felhasznalonev"].ToString()) && textBox2.Text == (rdr["jelszo"].ToString()))
+                        {
+
+                            groupBox1.Visible = false;
+
+                            button1_imap.Visible = true;
+                            button1_manualis.Visible = true;
+                            button1_partnerlista.Visible = true;
+                            if (textBox1.Text == "admin")
+                            {
+                                button1_felhaszhozzaad.Visible = true;
+                            }
+                            else
+                                button1_felhaszhozzaad.Visible = false;
+
+                            button1_kilepes.Visible = true;
+                            irany = true;
+                        }   
+                    }
+
+                    if (irany == false)
                     {
                         MessageBox.Show("Rossz felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
-                }
 
-                Program.conn.Close();
+
+                    Program.conn.Close();
+                }
+                
             }
+            catch (Exception)
+            {
+                return;
+            }
+
+
+
         }
 
         private void button1_kilepes_Click(object sender, EventArgs e)
@@ -127,6 +160,17 @@ namespace Zarodolgozat
 
             textBox1.Text = "";
             textBox2.Text = "";
+        }
+
+        private void Button1kilep_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Button1_felhaszhozzaad_Click(object sender, EventArgs e)
+        {
+            var useradd = new useradd();
+            useradd.Show();
         }
     }
 }
