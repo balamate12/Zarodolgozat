@@ -1,6 +1,6 @@
 ﻿namespace Zarodolgozat
 {
-    partial class plista
+    partial class Partnerlista
     {
         /// <summary>
         /// Required designer variable.
@@ -365,7 +365,7 @@
             this.button1_torles.UseVisualStyleBackColor = true;
             this.button1_torles.Click += new System.EventHandler(this.Button1_torles_Click);
             // 
-            // plista
+            // Partnerlista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -404,9 +404,9 @@
             this.Controls.Add(this.button1_kereses);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "plista";
+            this.Name = "Partnerlista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "plista";
+            this.Text = "Partnerlista";
             this.Load += new System.EventHandler(this.Plista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

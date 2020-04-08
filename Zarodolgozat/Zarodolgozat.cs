@@ -39,7 +39,7 @@ namespace Zarodolgozat
 
         private void Button1_partnerlista_Click(object sender, EventArgs e)
         {
-            var plista = new plista();
+            var plista = new Partnerlista();
             plista.Show();
         }
 

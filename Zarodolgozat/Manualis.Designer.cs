@@ -363,7 +363,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Manualis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manualis";
+            this.Text = "Manuális feltöltés";
             this.Load += new System.EventHandler(this.Manualis_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

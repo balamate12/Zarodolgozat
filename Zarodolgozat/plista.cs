@@ -13,10 +13,10 @@ using System.Data.SqlClient;
 
 namespace Zarodolgozat
 {
-    public partial class plista : Form
+    public partial class Partnerlista : Form
     {
 
-        public plista()
+        public Partnerlista()
         {
             InitializeComponent();
         }
