@@ -26,6 +26,21 @@ namespace Zarodolgozat
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
 
+            textBox2_eloneve.Enabled = false;
+            textBox3_szulneve.Enabled = false;
+            textBox4_szulhely.Enabled = false;
+            dateTimePicker1_szulido.Enabled = false;
+            textBox3_anyjaszulneve.Enabled = false;
+            textBox4_szemelyiszam.Enabled = false;
+            textBox5_telepitesicim.Enabled = false;
+            textbox6_postazasicim.Enabled = false;
+            maskedTextBox1_telefonszam.Enabled = false;
+            textBox7_email.Enabled = false;
+            listBox1_internetcsomag.Enabled = false;
+            listBox1_fizetesimod.Enabled = false;
+            textBox8_megjegyzes.Enabled = false;
+
+
             Adattabla_beallitasai();
             Adattabla_Update();
         }
@@ -321,6 +336,19 @@ namespace Zarodolgozat
         {
             try
             {
+                textBox2_eloneve.Enabled = true;
+                textBox3_szulneve.Enabled = true;
+                textBox4_szulhely.Enabled = true;
+                dateTimePicker1_szulido.Enabled = true;
+                textBox3_anyjaszulneve.Enabled = true;
+                textBox4_szemelyiszam.Enabled = true;
+                textBox5_telepitesicim.Enabled = true;
+                textbox6_postazasicim.Enabled = true;
+                maskedTextBox1_telefonszam.Enabled = true;
+                textBox7_email.Enabled = true;
+                listBox1_internetcsomag.Enabled = true;
+                listBox1_fizetesimod.Enabled = true;
+                textBox8_megjegyzes.Enabled = true;
 
                 dataGridView1.CurrentRow.Selected = true;
 
