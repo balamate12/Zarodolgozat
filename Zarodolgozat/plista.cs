@@ -389,10 +389,24 @@ namespace Zarodolgozat
             }
             catch (Exception)
             {
+                textBox2_eloneve.Text = "";
+                textBox3_szulneve.Text = "";
+                textBox4_szulhely.Text = ""; 
+                dateTimePicker1_szulido.Text = "";
+                textBox3_anyjaszulneve.Text = "";
+                textBox4_szemelyiszam.Text = "";
+                textBox5_telepitesicim.Text = "";
+                textbox6_postazasicim.Text = "";
+                maskedTextBox1_telefonszam.Text = "";
+                textBox7_email.Text = "";
+                listBox1_internetcsomag.SelectedItem = "";
+                listBox1_fizetesimod.SelectedItem = "";
+                textBox8_megjegyzes.Text = "";
+                button1_torles.Enabled = false;
                 MessageBox.Show("Nem partner lett kijelölve!");
-
             }
-            
+           
+
 
         }
 
@@ -450,6 +464,7 @@ namespace Zarodolgozat
                 Program.sqlparancs.CommandText = "DELETE FROM `users` WHERE id= '" + ertek + "'";
                 Program.sqlparancs.ExecuteNonQuery();
                 MessageBox.Show("Sikeres eltávolítás!");
+
             }
             catch (Exception ex)
             {
