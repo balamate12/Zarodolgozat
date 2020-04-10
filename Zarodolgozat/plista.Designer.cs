@@ -68,9 +68,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 66);
+            this.dataGridView1.Location = new System.Drawing.Point(-155, 66);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -80,7 +81,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 23);
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Location = new System.Drawing.Point(-83, 23);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(1687, 22);
@@ -89,7 +91,8 @@
             // 
             // button1_kereses
             // 
-            this.button1_kereses.Location = new System.Drawing.Point(1784, 20);
+            this.button1_kereses.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1_kereses.Location = new System.Drawing.Point(1613, 20);
             this.button1_kereses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1_kereses.Name = "button1_kereses";
             this.button1_kereses.Size = new System.Drawing.Size(100, 28);
@@ -100,7 +103,8 @@
             // 
             // textBox2_eloneve
             // 
-            this.textBox2_eloneve.Location = new System.Drawing.Point(604, 513);
+            this.textBox2_eloneve.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox2_eloneve.Location = new System.Drawing.Point(433, 513);
             this.textBox2_eloneve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2_eloneve.Name = "textBox2_eloneve";
             this.textBox2_eloneve.Size = new System.Drawing.Size(292, 22);
@@ -108,7 +112,8 @@
             // 
             // textBox3_szulneve
             // 
-            this.textBox3_szulneve.Location = new System.Drawing.Point(604, 561);
+            this.textBox3_szulneve.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox3_szulneve.Location = new System.Drawing.Point(433, 561);
             this.textBox3_szulneve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3_szulneve.Name = "textBox3_szulneve";
             this.textBox3_szulneve.Size = new System.Drawing.Size(292, 22);
@@ -116,7 +121,8 @@
             // 
             // textBox4_szulhely
             // 
-            this.textBox4_szulhely.Location = new System.Drawing.Point(604, 604);
+            this.textBox4_szulhely.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox4_szulhely.Location = new System.Drawing.Point(433, 604);
             this.textBox4_szulhely.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4_szulhely.Name = "textBox4_szulhely";
             this.textBox4_szulhely.Size = new System.Drawing.Size(292, 22);
@@ -124,8 +130,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(449, 513);
+            this.label1.Location = new System.Drawing.Point(278, 513);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 17);
@@ -134,8 +141,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(449, 561);
+            this.label2.Location = new System.Drawing.Point(278, 561);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 17);
@@ -144,8 +152,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(449, 604);
+            this.label3.Location = new System.Drawing.Point(278, 604);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 17);
@@ -154,8 +163,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(449, 649);
+            this.label4.Location = new System.Drawing.Point(278, 649);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 17);
@@ -164,8 +174,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(449, 690);
+            this.label5.Location = new System.Drawing.Point(278, 690);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 17);
@@ -174,8 +185,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(449, 743);
+            this.label6.Location = new System.Drawing.Point(278, 743);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 17);
@@ -184,8 +196,9 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(940, 513);
+            this.label7.Location = new System.Drawing.Point(769, 513);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 17);
@@ -194,8 +207,9 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(940, 561);
+            this.label8.Location = new System.Drawing.Point(769, 561);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 17);
@@ -204,8 +218,9 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(940, 604);
+            this.label9.Location = new System.Drawing.Point(769, 604);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 17);
@@ -214,8 +229,9 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(940, 649);
+            this.label10.Location = new System.Drawing.Point(769, 649);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 17);
@@ -224,8 +240,9 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(940, 690);
+            this.label11.Location = new System.Drawing.Point(769, 690);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 17);
@@ -234,8 +251,9 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(940, 743);
+            this.label12.Location = new System.Drawing.Point(769, 743);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 17);
@@ -244,8 +262,9 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(449, 800);
+            this.label13.Location = new System.Drawing.Point(278, 800);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(87, 17);
@@ -254,6 +273,7 @@
             // 
             // listBox1_internetcsomag
             // 
+            this.listBox1_internetcsomag.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBox1_internetcsomag.FormattingEnabled = true;
             this.listBox1_internetcsomag.ItemHeight = 16;
             this.listBox1_internetcsomag.Items.AddRange(new object[] {
@@ -261,7 +281,7 @@
             "15",
             "30",
             "60"});
-            this.listBox1_internetcsomag.Location = new System.Drawing.Point(1061, 690);
+            this.listBox1_internetcsomag.Location = new System.Drawing.Point(890, 690);
             this.listBox1_internetcsomag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1_internetcsomag.Name = "listBox1_internetcsomag";
             this.listBox1_internetcsomag.Size = new System.Drawing.Size(292, 20);
@@ -269,7 +289,8 @@
             // 
             // maskedTextBox1_telefonszam
             // 
-            this.maskedTextBox1_telefonszam.Location = new System.Drawing.Point(1061, 601);
+            this.maskedTextBox1_telefonszam.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.maskedTextBox1_telefonszam.Location = new System.Drawing.Point(890, 601);
             this.maskedTextBox1_telefonszam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.maskedTextBox1_telefonszam.Name = "maskedTextBox1_telefonszam";
             this.maskedTextBox1_telefonszam.Size = new System.Drawing.Size(292, 22);
@@ -277,7 +298,8 @@
             // 
             // textBox3_anyjaszulneve
             // 
-            this.textBox3_anyjaszulneve.Location = new System.Drawing.Point(604, 690);
+            this.textBox3_anyjaszulneve.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox3_anyjaszulneve.Location = new System.Drawing.Point(433, 690);
             this.textBox3_anyjaszulneve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3_anyjaszulneve.Name = "textBox3_anyjaszulneve";
             this.textBox3_anyjaszulneve.Size = new System.Drawing.Size(292, 22);
@@ -285,7 +307,8 @@
             // 
             // textBox4_szemelyiszam
             // 
-            this.textBox4_szemelyiszam.Location = new System.Drawing.Point(604, 743);
+            this.textBox4_szemelyiszam.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox4_szemelyiszam.Location = new System.Drawing.Point(433, 743);
             this.textBox4_szemelyiszam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4_szemelyiszam.Name = "textBox4_szemelyiszam";
             this.textBox4_szemelyiszam.Size = new System.Drawing.Size(292, 22);
@@ -293,7 +316,8 @@
             // 
             // textBox5_telepitesicim
             // 
-            this.textBox5_telepitesicim.Location = new System.Drawing.Point(1061, 513);
+            this.textBox5_telepitesicim.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox5_telepitesicim.Location = new System.Drawing.Point(890, 513);
             this.textBox5_telepitesicim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5_telepitesicim.Name = "textBox5_telepitesicim";
             this.textBox5_telepitesicim.Size = new System.Drawing.Size(292, 22);
@@ -301,7 +325,8 @@
             // 
             // textbox6_postazasicim
             // 
-            this.textbox6_postazasicim.Location = new System.Drawing.Point(1061, 561);
+            this.textbox6_postazasicim.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textbox6_postazasicim.Location = new System.Drawing.Point(890, 561);
             this.textbox6_postazasicim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textbox6_postazasicim.Name = "textbox6_postazasicim";
             this.textbox6_postazasicim.Size = new System.Drawing.Size(292, 22);
@@ -309,7 +334,8 @@
             // 
             // textBox7_email
             // 
-            this.textBox7_email.Location = new System.Drawing.Point(1061, 640);
+            this.textBox7_email.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox7_email.Location = new System.Drawing.Point(890, 640);
             this.textBox7_email.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox7_email.Name = "textBox7_email";
             this.textBox7_email.Size = new System.Drawing.Size(292, 22);
@@ -317,7 +343,8 @@
             // 
             // textBox8_megjegyzes
             // 
-            this.textBox8_megjegyzes.Location = new System.Drawing.Point(604, 800);
+            this.textBox8_megjegyzes.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox8_megjegyzes.Location = new System.Drawing.Point(433, 800);
             this.textBox8_megjegyzes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox8_megjegyzes.Multiline = true;
             this.textBox8_megjegyzes.Name = "textBox8_megjegyzes";
@@ -326,7 +353,8 @@
             // 
             // button1_importcsv
             // 
-            this.button1_importcsv.Location = new System.Drawing.Point(1377, 513);
+            this.button1_importcsv.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1_importcsv.Location = new System.Drawing.Point(1206, 513);
             this.button1_importcsv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1_importcsv.Name = "button1_importcsv";
             this.button1_importcsv.Size = new System.Drawing.Size(100, 28);
@@ -337,7 +365,8 @@
             // 
             // button1_modositas
             // 
-            this.button1_modositas.Location = new System.Drawing.Point(1377, 636);
+            this.button1_modositas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1_modositas.Location = new System.Drawing.Point(1206, 636);
             this.button1_modositas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1_modositas.Name = "button1_modositas";
             this.button1_modositas.Size = new System.Drawing.Size(100, 28);
@@ -348,8 +377,9 @@
             // 
             // dateTimePicker1_szulido
             // 
+            this.dateTimePicker1_szulido.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker1_szulido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1_szulido.Location = new System.Drawing.Point(604, 649);
+            this.dateTimePicker1_szulido.Location = new System.Drawing.Point(433, 649);
             this.dateTimePicker1_szulido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1_szulido.Name = "dateTimePicker1_szulido";
             this.dateTimePicker1_szulido.Size = new System.Drawing.Size(292, 22);
@@ -357,13 +387,14 @@
             // 
             // listBox1_fizetesimod
             // 
+            this.listBox1_fizetesimod.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBox1_fizetesimod.FormattingEnabled = true;
             this.listBox1_fizetesimod.ItemHeight = 16;
             this.listBox1_fizetesimod.Items.AddRange(new object[] {
             "Csekk",
             "Banki átutalás",
             "Elektronikus számla"});
-            this.listBox1_fizetesimod.Location = new System.Drawing.Point(1061, 743);
+            this.listBox1_fizetesimod.Location = new System.Drawing.Point(890, 743);
             this.listBox1_fizetesimod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1_fizetesimod.Name = "listBox1_fizetesimod";
             this.listBox1_fizetesimod.Size = new System.Drawing.Size(292, 20);
@@ -371,8 +402,9 @@
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 27);
+            this.label14.Location = new System.Drawing.Point(-155, 27);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(64, 17);
@@ -381,7 +413,8 @@
             // 
             // button1_bezaras
             // 
-            this.button1_bezaras.Location = new System.Drawing.Point(1377, 822);
+            this.button1_bezaras.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1_bezaras.Location = new System.Drawing.Point(1206, 822);
             this.button1_bezaras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1_bezaras.Name = "button1_bezaras";
             this.button1_bezaras.Size = new System.Drawing.Size(100, 28);
@@ -392,7 +425,8 @@
             // 
             // button1_torles
             // 
-            this.button1_torles.Location = new System.Drawing.Point(1377, 690);
+            this.button1_torles.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1_torles.Location = new System.Drawing.Point(1206, 690);
             this.button1_torles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1_torles.Name = "button1_torles";
             this.button1_torles.Size = new System.Drawing.Size(100, 28);
@@ -405,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1900, 921);
+            this.ClientSize = new System.Drawing.Size(1582, 921);
             this.Controls.Add(this.button1_torles);
             this.Controls.Add(this.button1_bezaras);
             this.Controls.Add(this.label14);
@@ -444,6 +478,7 @@
             this.Name = "Partnerlista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Partnerlista";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Plista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
