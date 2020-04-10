@@ -20,12 +20,17 @@ namespace Zarodolgozat
 
         private void Manualis_Load(object sender, EventArgs e)
         {
-
+            listBox1_internetcsomag.SelectedItem = "8";
+            listBox2_fizetesimod.SelectedItem = "Csekk";
         }
 
 
         private void Button1_kuld_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox1_elofizetoneve.Text))
+            {
+                MessageBox.Show("Adja meg az előfizető nevét!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             if (!this.textBox5_email.Text.Contains('@') || !this.textBox5_email.Text.Contains('.'))
             {
                 MessageBox.Show("Kérem adjon meg egy helyes email címet!", "Hibaüzent", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -72,6 +77,7 @@ namespace Zarodolgozat
                 Program.sqlparancs.Parameters.Add("megjegyzes", MySqlDbType.VarChar).Value = megjegyzes;
                 Program.sqlparancs.ExecuteNonQuery();
                 Program.conn.Close();
+                MessageBox.Show("Sikeres feltöltés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
