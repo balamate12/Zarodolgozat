@@ -94,8 +94,8 @@ namespace Zarodolgozat
 
             if (!String.IsNullOrEmpty(label1.Text))
             {
-
                 MessageBox.Show("Sikeres feltöltés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             if (String.IsNullOrEmpty(label1.Text))
             {
@@ -323,7 +323,7 @@ namespace Zarodolgozat
                 Program.conn.Close();
 
             }
-
+            label1.Text = "";
         }
 
         private void Button1_bezar_Click(object sender, EventArgs e)

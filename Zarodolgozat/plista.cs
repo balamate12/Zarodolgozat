@@ -297,6 +297,7 @@ namespace Zarodolgozat
                 Program.sqlparancs.Connection = Program.conn;
 
 
+
                 Program.sqlparancs.CommandText = "UPDATE `users` SET elofizetoneve = @1, szuletesineve = @2, szuletesihely = @3, szuletesiido = @4, anyjaszuletesineve = @5,  szemelyiszam = @6,  telepitesicim = @7, postazasicim = @8,  telefonszam = @9,  email = @10, internetcsomag = @11,  fizetesimod = @12,  megjegyzes = @13 WHERE (id = '" + ertek + "')"; // elofizetoneve
 
 
@@ -363,7 +364,7 @@ namespace Zarodolgozat
                 string ertek = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
 
                 Program.conn.Open();
-                string sql = "SELECT * FROM users WHERE id = '" + ertek + "'"; // elofizetoneve
+                string sql = "SELECT * FROM users WHERE id = '" + ertek + "'"; 
                 using (var cmd = new MySqlCommand(sql, Program.conn))
                 {
                     MySqlDataReader rdr = cmd.ExecuteReader();
@@ -385,6 +386,25 @@ namespace Zarodolgozat
 
                     }
                     Program.conn.Close();
+                    if (textBox2_eloneve.Text == "")
+                    {
+                        textBox2_eloneve.Enabled = false;
+                        textBox3_szulneve.Enabled = false;
+                        textBox4_szulhely.Enabled = false;
+                        dateTimePicker1_szulido.Enabled = false;
+                        textBox3_anyjaszulneve.Enabled = false;
+                        textBox4_szemelyiszam.Enabled = false;
+                        textBox5_telepitesicim.Enabled = false;
+                        textbox6_postazasicim.Enabled = false;
+                        maskedTextBox1_telefonszam.Enabled = false;
+                        textBox7_email.Enabled = false;
+                        listBox1_internetcsomag.Enabled = false;
+                        listBox1_fizetesimod.Enabled = false;
+                        textBox8_megjegyzes.Enabled = false;
+
+                        button1_modositas.Enabled = false;
+                        button1_torles.Enabled = false;
+                    }
                 }
             }
             catch (Exception)
@@ -402,7 +422,23 @@ namespace Zarodolgozat
                 listBox1_internetcsomag.SelectedItem = "";
                 listBox1_fizetesimod.SelectedItem = "";
                 textBox8_megjegyzes.Text = "";
+                textBox2_eloneve.Enabled = false;
+                textBox3_szulneve.Enabled = false;
+                textBox4_szulhely.Enabled = false;
+                dateTimePicker1_szulido.Enabled = false;
+                textBox3_anyjaszulneve.Enabled = false;
+                textBox4_szemelyiszam.Enabled = false;
+                textBox5_telepitesicim.Enabled = false;
+                textbox6_postazasicim.Enabled = false;
+                maskedTextBox1_telefonszam.Enabled = false;
+                textBox7_email.Enabled = false;
+                listBox1_internetcsomag.Enabled = false;
+                listBox1_fizetesimod.Enabled = false;
+                textBox8_megjegyzes.Enabled = false;
+
+                button1_modositas.Enabled = false;
                 button1_torles.Enabled = false;
+
                 MessageBox.Show("Nem partner lett kijelölve!");
             }
            

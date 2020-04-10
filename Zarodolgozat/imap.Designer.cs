@@ -44,44 +44,49 @@
             // label1_imap
             // 
             this.label1_imap.AutoSize = true;
-            this.label1_imap.Location = new System.Drawing.Point(25, 21);
+            this.label1_imap.Location = new System.Drawing.Point(33, 26);
+            this.label1_imap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1_imap.Name = "label1_imap";
-            this.label1_imap.Size = new System.Drawing.Size(36, 13);
+            this.label1_imap.Size = new System.Drawing.Size(44, 17);
             this.label1_imap.TabIndex = 1;
             this.label1_imap.Text = "IMAP:";
             // 
             // label2_port
             // 
             this.label2_port.AutoSize = true;
-            this.label2_port.Location = new System.Drawing.Point(233, 21);
+            this.label2_port.Location = new System.Drawing.Point(33, 79);
+            this.label2_port.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2_port.Name = "label2_port";
-            this.label2_port.Size = new System.Drawing.Size(29, 13);
+            this.label2_port.Size = new System.Drawing.Size(38, 17);
             this.label2_port.TabIndex = 2;
             this.label2_port.Text = "Port:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 62);
+            this.label3.Location = new System.Drawing.Point(28, 132);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "User:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(233, 62);
+            this.label4.Location = new System.Drawing.Point(6, 183);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Password:";
             // 
             // button1_bejelentkezes
             // 
-            this.button1_bejelentkezes.Location = new System.Drawing.Point(486, 21);
+            this.button1_bejelentkezes.Location = new System.Drawing.Point(36, 236);
+            this.button1_bejelentkezes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1_bejelentkezes.Name = "button1_bejelentkezes";
-            this.button1_bejelentkezes.Size = new System.Drawing.Size(75, 23);
+            this.button1_bejelentkezes.Size = new System.Drawing.Size(100, 28);
             this.button1_bejelentkezes.TabIndex = 5;
             this.button1_bejelentkezes.Text = "Belépés";
             this.button1_bejelentkezes.UseVisualStyleBackColor = true;
@@ -89,31 +94,35 @@
             // 
             // textBox2_imap
             // 
-            this.textBox2_imap.Location = new System.Drawing.Point(67, 18);
+            this.textBox2_imap.Location = new System.Drawing.Point(84, 22);
+            this.textBox2_imap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2_imap.Name = "textBox2_imap";
-            this.textBox2_imap.Size = new System.Drawing.Size(160, 20);
+            this.textBox2_imap.Size = new System.Drawing.Size(217, 22);
             this.textBox2_imap.TabIndex = 1;
             // 
             // textBox3_user
             // 
-            this.textBox3_user.Location = new System.Drawing.Point(67, 59);
+            this.textBox3_user.Location = new System.Drawing.Point(84, 129);
+            this.textBox3_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3_user.Name = "textBox3_user";
-            this.textBox3_user.Size = new System.Drawing.Size(160, 20);
+            this.textBox3_user.Size = new System.Drawing.Size(217, 22);
             this.textBox3_user.TabIndex = 3;
             // 
             // textBox5_password
             // 
-            this.textBox5_password.Location = new System.Drawing.Point(292, 59);
+            this.textBox5_password.Location = new System.Drawing.Point(84, 180);
+            this.textBox5_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5_password.Name = "textBox5_password";
             this.textBox5_password.PasswordChar = '*';
-            this.textBox5_password.Size = new System.Drawing.Size(164, 20);
+            this.textBox5_password.Size = new System.Drawing.Size(217, 22);
             this.textBox5_password.TabIndex = 4;
             // 
             // button1_bezar
             // 
-            this.button1_bezar.Location = new System.Drawing.Point(486, 59);
+            this.button1_bezar.Location = new System.Drawing.Point(201, 236);
+            this.button1_bezar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1_bezar.Name = "button1_bezar";
-            this.button1_bezar.Size = new System.Drawing.Size(75, 23);
+            this.button1_bezar.Size = new System.Drawing.Size(100, 28);
             this.button1_bezar.TabIndex = 6;
             this.button1_bezar.Text = "Bezárás";
             this.button1_bezar.UseVisualStyleBackColor = true;
@@ -122,25 +131,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 110);
+            this.label1.Location = new System.Drawing.Point(166, 323);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 11;
             // 
             // maskedTextBox1_port
             // 
-            this.maskedTextBox1_port.Location = new System.Drawing.Point(292, 18);
+            this.maskedTextBox1_port.Location = new System.Drawing.Point(84, 76);
+            this.maskedTextBox1_port.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.maskedTextBox1_port.Mask = "00000";
             this.maskedTextBox1_port.Name = "maskedTextBox1_port";
-            this.maskedTextBox1_port.Size = new System.Drawing.Size(164, 20);
+            this.maskedTextBox1_port.Size = new System.Drawing.Size(217, 22);
             this.maskedTextBox1_port.TabIndex = 2;
             this.maskedTextBox1_port.ValidatingType = typeof(int);
             // 
             // imap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 99);
+            this.ClientSize = new System.Drawing.Size(340, 282);
             this.Controls.Add(this.maskedTextBox1_port);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1_bezar);
@@ -152,6 +163,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2_port);
             this.Controls.Add(this.label1_imap);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "imap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imap";
