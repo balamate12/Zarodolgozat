@@ -40,6 +40,8 @@ namespace Zarodolgozat
             listBox1_fizetesimod.Enabled = false;
             textBox8_megjegyzes.Enabled = false;
 
+            button1_modositas.Enabled = false;
+            button1_torles.Enabled = false;
 
             Adattabla_beallitasai();
             Adattabla_Update();
@@ -349,6 +351,9 @@ namespace Zarodolgozat
                 listBox1_internetcsomag.Enabled = true;
                 listBox1_fizetesimod.Enabled = true;
                 textBox8_megjegyzes.Enabled = true;
+
+                button1_modositas.Enabled = true;
+                button1_torles.Enabled = true;
 
                 dataGridView1.CurrentRow.Selected = true;
 
