@@ -210,7 +210,6 @@ namespace Zarodolgozat
                         MessageBox.Show("Rossz felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
                     else
-                MessageBox.Show("Sikeres bejelentkezés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     Program.conn.Close();
