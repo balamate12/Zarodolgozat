@@ -386,42 +386,11 @@ namespace Zarodolgozat
 
                     }
                     Program.conn.Close();
-                    if (textBox2_eloneve.Text == "")
-                    {
-                        textBox2_eloneve.Enabled = false;
-                        textBox3_szulneve.Enabled = false;
-                        textBox4_szulhely.Enabled = false;
-                        dateTimePicker1_szulido.Enabled = false;
-                        textBox3_anyjaszulneve.Enabled = false;
-                        textBox4_szemelyiszam.Enabled = false;
-                        textBox5_telepitesicim.Enabled = false;
-                        textbox6_postazasicim.Enabled = false;
-                        maskedTextBox1_telefonszam.Enabled = false;
-                        textBox7_email.Enabled = false;
-                        listBox1_internetcsomag.Enabled = false;
-                        listBox1_fizetesimod.Enabled = false;
-                        textBox8_megjegyzes.Enabled = false;
 
-                        button1_modositas.Enabled = false;
-                        button1_torles.Enabled = false;
-                    }
                 }
             }
             catch (Exception)
             {
-                textBox2_eloneve.Text = "";
-                textBox3_szulneve.Text = "";
-                textBox4_szulhely.Text = ""; 
-                dateTimePicker1_szulido.Text = "";
-                textBox3_anyjaszulneve.Text = "";
-                textBox4_szemelyiszam.Text = "";
-                textBox5_telepitesicim.Text = "";
-                textbox6_postazasicim.Text = "";
-                maskedTextBox1_telefonszam.Text = "";
-                textBox7_email.Text = "";
-                listBox1_internetcsomag.SelectedItem = "";
-                listBox1_fizetesimod.SelectedItem = "";
-                textBox8_megjegyzes.Text = "";
                 textBox2_eloneve.Enabled = false;
                 textBox3_szulneve.Enabled = false;
                 textBox4_szulhely.Enabled = false;
@@ -499,12 +468,12 @@ namespace Zarodolgozat
                 Program.sqlparancs.Connection = Program.conn;
                 Program.sqlparancs.CommandText = "DELETE FROM `users` WHERE id= '" + ertek + "'";
                 Program.sqlparancs.ExecuteNonQuery();
-                MessageBox.Show("Sikeres eltávolítás!");
+                MessageBox.Show("Sikeres eltávolítás!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Az eltávolítás sikertelen volt!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             Program.conn.Close();
 

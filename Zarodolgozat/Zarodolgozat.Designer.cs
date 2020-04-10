@@ -61,7 +61,7 @@
             // button1_imap
             // 
             this.button1_imap.Location = new System.Drawing.Point(131, 247);
-            this.button1_imap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1_imap.Margin = new System.Windows.Forms.Padding(4);
             this.button1_imap.Name = "button1_imap";
             this.button1_imap.Size = new System.Drawing.Size(177, 28);
             this.button1_imap.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             this.button1_partnerlista.CausesValidation = false;
             this.button1_partnerlista.Location = new System.Drawing.Point(131, 118);
-            this.button1_partnerlista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1_partnerlista.Margin = new System.Windows.Forms.Padding(4);
             this.button1_partnerlista.Name = "button1_partnerlista";
             this.button1_partnerlista.Size = new System.Drawing.Size(177, 28);
             this.button1_partnerlista.TabIndex = 1;
@@ -95,9 +95,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(13, 6);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(413, 415);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -116,7 +116,7 @@
             // button1kilep
             // 
             this.button1kilep.Location = new System.Drawing.Point(240, 353);
-            this.button1kilep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1kilep.Margin = new System.Windows.Forms.Padding(4);
             this.button1kilep.Name = "button1kilep";
             this.button1kilep.Size = new System.Drawing.Size(111, 26);
             this.button1kilep.TabIndex = 5;
@@ -127,18 +127,19 @@
             // button1_belepes
             // 
             this.button1_belepes.Location = new System.Drawing.Point(57, 356);
-            this.button1_belepes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1_belepes.Margin = new System.Windows.Forms.Padding(4);
             this.button1_belepes.Name = "button1_belepes";
             this.button1_belepes.Size = new System.Drawing.Size(111, 26);
             this.button1_belepes.TabIndex = 4;
             this.button1_belepes.Text = "Belépés";
             this.button1_belepes.UseVisualStyleBackColor = true;
             this.button1_belepes.Click += new System.EventHandler(this.button1_belepes_Click);
+            this.button1_belepes.Enter += new System.EventHandler(this.Button1_belepes_Enter);
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(57, 297);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(292, 22);
@@ -148,7 +149,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(57, 235);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(292, 22);
             this.textBox1.TabIndex = 2;
@@ -176,7 +177,7 @@
             // button1_kilepes
             // 
             this.button1_kilepes.Location = new System.Drawing.Point(131, 368);
-            this.button1_kilepes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1_kilepes.Margin = new System.Windows.Forms.Padding(4);
             this.button1_kilepes.Name = "button1_kilepes";
             this.button1_kilepes.Size = new System.Drawing.Size(177, 28);
             this.button1_kilepes.TabIndex = 5;
@@ -187,7 +188,7 @@
             // button1_felhaszhozzaad
             // 
             this.button1_felhaszhozzaad.Location = new System.Drawing.Point(131, 309);
-            this.button1_felhaszhozzaad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1_felhaszhozzaad.Margin = new System.Windows.Forms.Padding(4);
             this.button1_felhaszhozzaad.Name = "button1_felhaszhozzaad";
             this.button1_felhaszhozzaad.Size = new System.Drawing.Size(177, 28);
             this.button1_felhaszhozzaad.TabIndex = 6;

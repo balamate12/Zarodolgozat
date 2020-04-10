@@ -84,7 +84,7 @@ namespace Zarodolgozat
             }
             catch (Exception)
             {
-                return;
+                //return;
             }
 
             
@@ -142,7 +142,7 @@ namespace Zarodolgozat
             }
             catch (Exception)
             {
-                return;
+                //return;
             }
 
 
@@ -172,6 +172,50 @@ namespace Zarodolgozat
             var useradd = new useradd();
             useradd.Show();
         }
-    }
+
+        private void Button1_belepes_Enter(object sender, EventArgs e)
+        {
+            bool irany = false;
+
+            Program.conn.Open();
+
+                    Program.sqlparancs.CommandText = "SELECT felhasznalonev, jelszo FROM login";
+
+                    MySqlDataReader rdr = Program.sqlparancs.ExecuteReader();
+                    while (rdr.Read())
+                    {
+
+                        if (textBox1.Text == (rdr["felhasznalonev"].ToString()) && textBox2.Text == (rdr["jelszo"].ToString()))
+                        {
+
+                            groupBox1.Visible = false;
+
+                            button1_imap.Visible = true;
+                            button1_manualis.Visible = true;
+                            button1_partnerlista.Visible = true;
+                            if (textBox1.Text == "admin")
+                            {
+                                button1_felhaszhozzaad.Visible = true;
+                            }
+                            else
+                                button1_felhaszhozzaad.Visible = false;
+
+                            button1_kilepes.Visible = true;
+                            irany = true;
+                        }
+                    }
+
+                    if (irany == false)
+                    {
+                        MessageBox.Show("Rossz felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    }
+                    else
+                MessageBox.Show("Sikeres bejelentkezés!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    Program.conn.Close();
+                }
+     
+        }
 }
 
