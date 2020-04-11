@@ -153,9 +153,9 @@
             this.label11_internetcsomag.AutoSize = true;
             this.label11_internetcsomag.Location = new System.Drawing.Point(562, 322);
             this.label11_internetcsomag.Name = "label11_internetcsomag";
-            this.label11_internetcsomag.Size = new System.Drawing.Size(307, 17);
+            this.label11_internetcsomag.Size = new System.Drawing.Size(311, 17);
             this.label11_internetcsomag.TabIndex = 10;
-            this.label11_internetcsomag.Text = "Internetcsomag(Kattinson a kiválasztott elemre)";
+            this.label11_internetcsomag.Text = "Internetcsomag:(Kattinson a kiválasztott elemre)";
             // 
             // label12_fizetesimod
             // 
@@ -310,7 +310,7 @@
             // button1_bezaras
             // 
             this.button1_bezaras.Location = new System.Drawing.Point(660, 730);
-            this.button1_bezaras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1_bezaras.Margin = new System.Windows.Forms.Padding(4);
             this.button1_bezaras.Name = "button1_bezaras";
             this.button1_bezaras.Size = new System.Drawing.Size(100, 28);
             this.button1_bezaras.TabIndex = 27;

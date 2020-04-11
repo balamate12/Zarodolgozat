@@ -30,6 +30,7 @@ namespace Zarodolgozat
             if (String.IsNullOrEmpty(textBox1_elofizetoneve.Text))
             {
                 MessageBox.Show("Adja meg az előfizető nevét!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             if (!this.textBox5_email.Text.Contains('@') || !this.textBox5_email.Text.Contains('.'))
             {

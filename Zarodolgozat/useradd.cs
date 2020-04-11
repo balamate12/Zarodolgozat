@@ -20,6 +20,17 @@ namespace Zarodolgozat
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox1_felhasznev.Text))
+            {
+                MessageBox.Show("Adjon meg felhasználónevet!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (String.IsNullOrEmpty(textBox2_jelszo.Text))
+            {
+                MessageBox.Show("Adjon meg jelszót!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             try
             {
                 string felhasznalonev = textBox1_felhasznev.Text;
