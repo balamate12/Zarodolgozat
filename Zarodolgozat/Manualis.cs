@@ -34,6 +34,7 @@ namespace Zarodolgozat
             if (!this.textBox5_email.Text.Contains('@') || !this.textBox5_email.Text.Contains('.'))
             {
                 MessageBox.Show("Kérem adjon meg egy helyes email címet!", "Hibaüzent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             try
