@@ -298,7 +298,7 @@ namespace Zarodolgozat
 
 
 
-                Program.sqlparancs.CommandText = "UPDATE `users` SET elofizetoneve = @1, szuletesineve = @2, szuletesihely = @3, szuletesiido = @4, anyjaszuletesineve = @5,  szemelyiszam = @6,  telepitesicim = @7, postazasicim = @8,  telefonszam = @9,  email = @10, internetcsomag = @11,  fizetesimod = @12,  megjegyzes = @13 WHERE (id = '" + ertek + "')"; // elofizetoneve
+                Program.sqlparancs.CommandText = "UPDATE `users` SET elofizetoneve = @1, szuletesineve = @2, szuletesihely = @3, szuletesiido = @4, anyjaszuletesineve = @5,  szemelyiszam = @6,  telepitesicim = @7, postazasicim = @8,  telefonszam = @9,  email = @10, internetcsomag = @11,  fizetesimod = @12,  megjegyzes = @13 WHERE (id = '" + ertek + "')"; 
 
 
                 Program.sqlparancs.Parameters.AddWithValue("@1", elofizetoneve);
