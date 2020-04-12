@@ -20,6 +20,10 @@ namespace Zarodolgozat
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            string felhasznalonev = textBox1_felhasznev.Text;
+            string jelszo = textBox2_jelszo.Text;
+            string jelszomegegyszer = textBox1_jelszomegegyszer.Text;
+
             if (String.IsNullOrEmpty(textBox1_felhasznev.Text))
             {
                 MessageBox.Show("Adjon meg felhasználónevet!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -30,32 +34,42 @@ namespace Zarodolgozat
                 MessageBox.Show("Adjon meg jelszót!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-            try
+            if (String.IsNullOrEmpty(textBox1_jelszomegegyszer.Text))
             {
-                string felhasznalonev = textBox1_felhasznev.Text;
-                string jelszo = textBox2_jelszo.Text;
-
-
-                Program.conn.Open();
-                Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
-                Program.sqlparancs.Connection = Program.conn;
-
-
-                Program.sqlparancs.CommandText = "INSERT INTO `login` (`id`,`felhasznalonev`, `jelszo`) VALUES(NULL, ?, ?);";
-                Program.sqlparancs.Parameters.Add("elofizetoneve", MySqlDbType.VarChar).Value = felhasznalonev;
-                Program.sqlparancs.Parameters.Add("szuletesineve", MySqlDbType.VarChar).Value = jelszo;
-
-                Program.sqlparancs.ExecuteNonQuery();
-                Program.conn.Close();
-                MessageBox.Show("Sikeres hozzáadás!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Sikertelen hozzáadás!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Adja meg a jelszót mégegyszer!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
 
-            this.Close();
+            if (textBox2_jelszo.Text != textBox1_jelszomegegyszer.Text)
+            {
+                MessageBox.Show("A két jelszó nem egyezik meg!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    Program.conn.Open();
+                    Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
+                    Program.sqlparancs.Connection = Program.conn;
+
+
+                    Program.sqlparancs.CommandText = "INSERT INTO `login` (`id`,`felhasznalonev`, `jelszo`) VALUES(NULL, ?, ?);";
+                    Program.sqlparancs.Parameters.Add("elofizetoneve", MySqlDbType.VarChar).Value = felhasznalonev;
+                    Program.sqlparancs.Parameters.Add("szuletesineve", MySqlDbType.VarChar).Value = jelszo;
+
+                    Program.sqlparancs.ExecuteNonQuery();
+                    Program.conn.Close();
+                    MessageBox.Show("Sikeres hozzáadás!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Sikertelen hozzáadás!", "Információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                this.Close();
+            }
         }
     }
 }
