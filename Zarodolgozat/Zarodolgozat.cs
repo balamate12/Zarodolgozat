@@ -132,7 +132,7 @@ namespace Zarodolgozat
 
                     if (irany == false)
                     {
-                        MessageBox.Show("Rossz felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("Téves felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
 
 
