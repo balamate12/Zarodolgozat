@@ -153,18 +153,18 @@
             this.label11_internetcsomag.AutoSize = true;
             this.label11_internetcsomag.Location = new System.Drawing.Point(562, 322);
             this.label11_internetcsomag.Name = "label11_internetcsomag";
-            this.label11_internetcsomag.Size = new System.Drawing.Size(311, 17);
+            this.label11_internetcsomag.Size = new System.Drawing.Size(315, 17);
             this.label11_internetcsomag.TabIndex = 10;
-            this.label11_internetcsomag.Text = "Internetcsomag:(Kattinson a kiválasztott elemre)";
+            this.label11_internetcsomag.Text = "Internetcsomag:(Kattintson a kiválasztott elemre)";
             // 
             // label12_fizetesimod
             // 
             this.label12_fizetesimod.AutoSize = true;
             this.label12_fizetesimod.Location = new System.Drawing.Point(562, 401);
             this.label12_fizetesimod.Name = "label12_fizetesimod";
-            this.label12_fizetesimod.Size = new System.Drawing.Size(293, 17);
+            this.label12_fizetesimod.Size = new System.Drawing.Size(297, 17);
             this.label12_fizetesimod.TabIndex = 11;
-            this.label12_fizetesimod.Text = "Fizetési mód:(Kattinson a kiválasztott elemre)";
+            this.label12_fizetesimod.Text = "Fizetési mód:(Kattintson a kiválasztott elemre)";
             // 
             // label13_megjegyzes
             // 
