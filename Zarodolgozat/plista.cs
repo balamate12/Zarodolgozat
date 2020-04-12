@@ -323,11 +323,13 @@ namespace Zarodolgozat
 
                 MessageBox.Show("Sikeres módosítás", "információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                textBox2_eloneve.Text = "";
+
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Válasszon ki partnert!","információ",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Sikertelen módosítás!","információ",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
             dataGridView1.Rows.Clear();
@@ -363,30 +365,36 @@ namespace Zarodolgozat
 
                 string ertek = dataGridView1.Rows[rowindex].Cells[columnindex].Value.ToString();
 
+
                 Program.conn.Open();
-                string sql = "SELECT * FROM users WHERE id = '" + ertek + "'"; 
-                using (var cmd = new MySqlCommand(sql, Program.conn))
-                {
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    while (rdr.Read())
+                string sql = "SELECT * FROM users WHERE id = '" + ertek + "'";
+                    using (var cmd = new MySqlCommand(sql, Program.conn))
                     {
-                        textBox2_eloneve.Text = rdr.GetString(1);
-                        textBox3_szulneve.Text = rdr.GetString(2);
-                        textBox4_szulhely.Text = rdr.GetString(3);
-                        dateTimePicker1_szulido.Text = rdr.GetString(4);
-                        textBox3_anyjaszulneve.Text = rdr.GetString(5);
-                        textBox4_szemelyiszam.Text = rdr.GetString(6);
-                        textBox5_telepitesicim.Text = rdr.GetString(7);
-                        textbox6_postazasicim.Text = rdr.GetString(8);
-                        maskedTextBox1_telefonszam.Text = rdr.GetString(9);
-                        textBox7_email.Text = rdr.GetString(10);
-                        listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
-                        listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
-                        textBox8_megjegyzes.Text = rdr.GetString(13);
+                        MySqlDataReader rdr = cmd.ExecuteReader();
+                        while (rdr.Read())
+                        {
+                            textBox2_eloneve.Text = rdr.GetString(1);
+                            textBox3_szulneve.Text = rdr.GetString(2);
+                            textBox4_szulhely.Text = rdr.GetString(3);
+                            dateTimePicker1_szulido.Text = rdr.GetString(4);
+                            textBox3_anyjaszulneve.Text = rdr.GetString(5);
+                            textBox4_szemelyiszam.Text = rdr.GetString(6);
+                            textBox5_telepitesicim.Text = rdr.GetString(7);
+                            textbox6_postazasicim.Text = rdr.GetString(8);
+                            maskedTextBox1_telefonszam.Text = rdr.GetString(9);
+                            textBox7_email.Text = rdr.GetString(10);
+                            listBox1_internetcsomag.SelectedItem = rdr.GetString(11);
+                            listBox1_fizetesimod.SelectedItem = rdr.GetString(12);
+                            textBox8_megjegyzes.Text = rdr.GetString(13);
 
-                    }
-                    Program.conn.Close();
+                        }
 
+                        if (textBox2_eloneve.Text == "")
+                        {
+                            button1_modositas.Enabled = false;
+                            button1_torles.Enabled = false;
+                        }
+                        Program.conn.Close();
                 }
             }
             catch (Exception)
@@ -408,9 +416,23 @@ namespace Zarodolgozat
                 button1_modositas.Enabled = false;
                 button1_torles.Enabled = false;
 
-                MessageBox.Show("Nem partner lett kijelölve!");
+
+                textBox2_eloneve.Text = "";
+                textBox3_szulneve.Text = "";
+                textBox4_szulhely.Text = "";
+                dateTimePicker1_szulido.Text = "";
+                textBox3_anyjaszulneve.Text = "";
+                textBox4_szemelyiszam.Text = "";
+                textBox5_telepitesicim.Text = "";
+                textbox6_postazasicim.Text = "";
+                maskedTextBox1_telefonszam.Text = "";
+                textBox7_email.Text = "";
+                textBox8_megjegyzes.Text = "";
+                MessageBox.Show("Nincs partner kijelölve!", "információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-           
+
+
+
 
 
         }

@@ -202,15 +202,14 @@ namespace Zarodolgozat
 
                             button1_kilepes.Visible = true;
                             irany = true;
-                        }
-                    }
 
                     if (irany == false)
                     {
-                        MessageBox.Show("Rossz felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("Téves felhasználónév vagy jelszó!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
                     }
-                    else
-
+                }
+           }
 
                     Program.conn.Close();
                 }

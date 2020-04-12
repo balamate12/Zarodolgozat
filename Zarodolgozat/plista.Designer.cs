@@ -360,7 +360,7 @@
             this.button1_importcsv.Name = "button1_importcsv";
             this.button1_importcsv.Size = new System.Drawing.Size(100, 28);
             this.button1_importcsv.TabIndex = 30;
-            this.button1_importcsv.Text = "Import CSV";
+            this.button1_importcsv.Text = "Exportálás";
             this.button1_importcsv.UseVisualStyleBackColor = true;
             this.button1_importcsv.Click += new System.EventHandler(this.button1_importcsv_Click);
             // 
