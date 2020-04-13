@@ -389,7 +389,7 @@ namespace Zarodolgozat
 
                         }
 
-                        if (textBox2_eloneve.Text == "")
+                        if (textBox2_eloneve.Text == "" || textBox4_szulhely.Text=="")
                         {
                             button1_modositas.Enabled = false;
                             button1_torles.Enabled = false;
