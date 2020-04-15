@@ -301,6 +301,23 @@ namespace Zarodolgozat
                 string[] sor11 = lines[16].Split(':');
                 string megjegyzes = sor11[1];
 
+                for (int i = 0; i < megjegyzes.Length; i++)
+                {
+                    if (megjegyzes[0] != ' ')
+                    {
+                        nev += megjegyzes[i];
+                    }
+                    if (i > 0)
+                    {
+                        nev += megjegyzes[i];
+                    }
+                }
+
+                megjegyzes = nev;
+
+
+                nev = "";
+
                 Program.sqlparancs = new MySqlCommand(Program.conn.ToString());
                 Program.sqlparancs.Connection = Program.conn;
 

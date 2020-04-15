@@ -529,6 +529,35 @@ namespace Zarodolgozat
 
             dataGridView1.Rows.Clear();
             Adattabla_Update();
+
+            button1_modositas.Enabled = false;
+            button1_torles.Enabled = false;
+
+            textBox2_eloneve.Enabled = false;
+            textBox3_szulneve.Enabled = false;
+            textBox4_szulhely.Enabled = false;
+            dateTimePicker1_szulido.Enabled = false;
+            textBox3_anyjaszulneve.Enabled = false;
+            textBox4_szemelyiszam.Enabled = false;
+            textBox5_telepitesicim.Enabled = false;
+            textbox6_postazasicim.Enabled = false;
+            maskedTextBox1_telefonszam.Enabled = false;
+            textBox7_email.Enabled = false;
+            listBox1_internetcsomag.Enabled = false;
+            listBox1_fizetesimod.Enabled = false;
+            textBox8_megjegyzes.Enabled = false;
+
+            textBox2_eloneve.Text = "";
+            textBox3_szulneve.Text = "";
+            textBox4_szulhely.Text = "";
+            dateTimePicker1_szulido.Text = "";
+            textBox3_anyjaszulneve.Text = "";
+            textBox4_szemelyiszam.Text = "";
+            textBox5_telepitesicim.Text = "";
+            textbox6_postazasicim.Text = "";
+            maskedTextBox1_telefonszam.Text = "";
+            textBox7_email.Text = "";
+            textBox8_megjegyzes.Text = "";
         }
     }
 }
