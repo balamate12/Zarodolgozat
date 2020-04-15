@@ -323,7 +323,21 @@ namespace Zarodolgozat
 
                 MessageBox.Show("Sikeres módosítás", "információ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                button1_modositas.Enabled = false;
+                button1_torles.Enabled = false;
+
+
                 textBox2_eloneve.Text = "";
+                textBox3_szulneve.Text = "";
+                textBox4_szulhely.Text = "";
+                dateTimePicker1_szulido.Text = "";
+                textBox3_anyjaszulneve.Text = "";
+                textBox4_szemelyiszam.Text = "";
+                textBox5_telepitesicim.Text = "";
+                textbox6_postazasicim.Text = "";
+                maskedTextBox1_telefonszam.Text = "";
+                textBox7_email.Text = "";
+                textBox8_megjegyzes.Text = "";
 
 
             }
@@ -389,7 +403,7 @@ namespace Zarodolgozat
 
                         }
 
-                        if (textBox2_eloneve.Text == "" || textBox4_szulhely.Text=="")
+                        if (textBox2_eloneve.Text == "" && textBox4_szulhely.Text=="")
                         {
                         textBox2_eloneve.Enabled = false;
                         textBox3_szulneve.Enabled = false;
@@ -406,7 +420,7 @@ namespace Zarodolgozat
                         textBox8_megjegyzes.Enabled = false;
 
                         button1_modositas.Enabled = false;
-                            button1_torles.Enabled = false;
+                        button1_torles.Enabled = false;
                         }
                         Program.conn.Close();
                 }
